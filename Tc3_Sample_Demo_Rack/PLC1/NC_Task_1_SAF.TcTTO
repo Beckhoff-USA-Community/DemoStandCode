@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Task Name="NC_Task_1_SAF" Id="{a4d62acb-080d-4229-923c-0d19f363f10b}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>1000</CycleTime>
+    <Priority>6</Priority>
+    <PouCall>
+      <Name>PRG_SAF</Name>
+    </PouCall>
+    <TaskFBGuid>{b20d4e7f-d140-4471-82da-583b3779c38b}</TaskFBGuid>
+    <Fb_init>{4aac135c-e4e4-4994-8f95-fd3770a28022}</Fb_init>
+    <Fb_exit>{a11d1637-f76e-44f7-b802-073f1d71c2da}</Fb_exit>
+    <CycleUpdate>{45287c46-2bde-4dbd-badb-36b88f713e1b}</CycleUpdate>
+    <PostCycleUpdate>{b24126be-8cda-4511-82fe-c88eb99ca7ae}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

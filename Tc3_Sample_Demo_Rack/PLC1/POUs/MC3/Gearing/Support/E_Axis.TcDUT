@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="E_Axis" Id="{1c7e21b2-ac77-4006-ae61-8f7091cd5b07}">
+    <Declaration><![CDATA[{attribute 'to_string'}
+TYPE E_Axis : (
+		Master := 0,
+		Slave
+	);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

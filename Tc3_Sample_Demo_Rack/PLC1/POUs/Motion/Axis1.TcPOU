@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="Axis1" Id="{6482dd8f-0683-48c2-80cc-146d71bdd97a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Axis1
 VAR
@@ -27,12 +27,12 @@ VAR
 	bMaxPositionReached						:BOOL;
 	
 (* Homing *)
-	fbHomingAxis							:MC_Home;
+	fbHomingAxis							:Tc2_Mc2.MC_Home;
 	fHomingPosition							:LREAL	:= 331.00;
 
 (* Touch Probe *)
-	fbTouchProbe							:MC_TouchProbe;
-	stTriggerInput							:TRIGGER_REF;
+	fbTouchProbe							:Tc2_Mc2.MC_TouchProbe;
+	stTriggerInput							:Tc2_Mc2.TRIGGER_REF;
 	bTouchProbeDone							:BOOL;
 	bTouchProbeBusy							:BOOL;
 	bTouchProbeComAb						:BOOL;
@@ -42,12 +42,12 @@ VAR
 	stRecordedData							:MC_TouchProbeRecordedData;	
 
 (* Couple Axis on Handwheel *)
-	fbGearIn								:MC_GearIn;
+	fbGearIn								:Tc2_Mc2.MC_GearIn;
 	bGearInDone								:BOOL;
 	bAxisCoupled							:BOOL;
 
 (* Uncouple Axis *)
-	fbGearOut								:MC_GearOut;
+	fbGearOut								:Tc2_Mc2.MC_GearOut;
 	bGearOutDone							:BOOL;
 
 END_VAR
@@ -201,9 +201,5 @@ END_VAR
 	
 (* End *)]]></ST>
     </Implementation>
-    <LineIds Name="Axis1">
-      <LineId Id="3" Count="145" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

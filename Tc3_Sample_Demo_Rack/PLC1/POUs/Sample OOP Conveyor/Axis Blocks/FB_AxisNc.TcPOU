@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_AxisNc" Id="{a450cac1-daf8-423f-a444-927e47eb20d3}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_AxisNc IMPLEMENTS I_Axis
 VAR_INPUT
@@ -7,16 +7,16 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
-	stAxisRef 		: AXIS_REF;
+	stAxisRef 		: Tc2_MC2.AXIS_REF;
 END_VAR
 VAR
 //Enable	
-	fbMCPower		: MC_Power;
+	fbMCPower		: Tc2_MC2.MC_Power;
 	bEnableAxis		: BOOL;
 	fbTrigEnable	: R_TRIG;
 	
 //Jog	
-	fbJog			: MC_Jog;
+	fbJog			: Tc2_MC2.MC_Jog;
 	bJogAxisFwd		: BOOL;
 	bJogAxisBwd		: BOOL;
 	fJogAxisSpeed	: LREAL;
@@ -25,20 +25,20 @@ VAR
 	udiJogErrID		: UDINT;
 	
 //Move Velocity 	
-	fbMoveVelocity 	: MC_MoveVelocity;
-	eAxisDirection	: MC_Direction;
+	fbMoveVelocity 	: Tc2_MC2.MC_MoveVelocity;
+	eAxisDirection	: Tc2_MC2.MC_Direction;
 	fbStartMoveVelocity: R_TRIG;
 	iVeloMoveSeq	: INT;
 	
 //Reset	
-	fbMCReset		: MC_Reset;
+	fbMCReset		: Tc2_MC2.MC_Reset;
 	fbTrigResetSeq	: R_TRIG;
 	iResetSeq		: INT;
 	bError			: BOOL;
 	udiErrorID		: UDINT;
 	fbTrigStop		: R_TRIG;
 	iStopSeq		: INT;
-	fbMCStop		: MC_Stop;
+	fbMCStop		: Tc2_MC2.MC_Stop;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -466,73 +466,5 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
-    <LineIds Name="FB_AxisNc">
-      <LineId Id="3" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Disable">
-      <LineId Id="3" Count="12" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Enable">
-      <LineId Id="3" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_HardwareReset">
-      <LineId Id="3" Count="6" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Jog">
-      <LineId Id="3" Count="35" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Reset">
-      <LineId Id="3" Count="39" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Speed">
-      <LineId Id="3" Count="39" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.M_Stop">
-      <LineId Id="3" Count="28" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_CurrentPosition.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_CurrentPosition.Set">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_CurrentSpeed.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_CurrentSpeed.Set">
-      <LineId Id="3" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_Error.Get">
-      <LineId Id="3" Count="4" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_Error.Set">
-      <LineId Id="3" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_ErrorID.Get">
-      <LineId Id="3" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_ErrorID.Set">
-      <LineId Id="3" Count="2" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_Ready.Get">
-      <LineId Id="3" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_AxisNc.P_Ready.Set">
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

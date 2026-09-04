@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="LoadControlSim" Id="{e493f60f-5600-411d-8a02-7190e9f56b4a}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LoadControlSim
+VAR
+	ActPos AT%Q*:	DINT;
+	SetVelo AT%I*:	INT;
+	PressureA AT%Q*:	INT;
+ 
+ 	fSetVelo:	LREAL;
+ 	fActPos:	LREAL;
+	fPressureA:	LREAL;
+
+	bBrake: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+fSetVelo:=INT_TO_LREAL(SetVelo)/32767*500.0;
+
+fActPos:=fActPos+fSetVelo*0.001;
+
+fActPos:=MIN(MAX(fActPos,0.0),500.0);
+ActPos:=LREAL_TO_DINT(fActPos * 1000.0);
+
+fPressureA:=MIN(MAX((fActPos-100.0)*5,0.0),200.0); 
+
+IF bBrake THEN
+	fPressureA:=MIN(MAX((fActPos-100.0)*5,0.0),20.0); 
+END_IF
+PressureA:=LREAL_TO_INT(fPressureA/400.0*32767);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

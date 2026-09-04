@@ -23,11 +23,12 @@
     <HmiCommunicationRouterPort>10102</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13001</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.756.1</HmiInitial>
-    <HmiRecent>14.2.116.1</HmiRecent>
+    <HmiRecent>14.3.995.1</HmiRecent>
     <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
     <TcHmi_Beckhoff_TwinCAT_HMI_Server_Engineering_IncludeInArchive>false</TcHmi_Beckhoff_TwinCAT_HMI_Server_Engineering_IncludeInArchive>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <HmiCommunicationServerPublicPort>3443</HmiCommunicationServerPublicPort>
   </PropertyGroup>
   <PropertyGroup>
     <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>
@@ -138,10 +139,6 @@
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
-    <Content Include="Server\ADS\ADS.Config.default.json">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Server\ADS\ADS.Config.default.json" />
     <Content Include="Server\ADS\ADS.Config.default.json">
       <SubType>Content</SubType>
     </Content>
@@ -355,12 +352,6 @@
     <Folder Include="Server\TcHmiSqliteLogger\" />
     <Folder Include="Server\TcHmiSrv\" />
     <Folder Include="Server\TcHmiUserManagement\" />
-    <Content Include="Server\ADS\ADS.Config.default.json">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Server\ADS\ADS.Config.remote.json">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Server\ADS\ADS.Storage.json">
       <SubType>Content</SubType>
     </Content>

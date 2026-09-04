@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PRG_SAF" Id="{6efa3269-2dd8-426c-804d-06e18b3a07f0}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SAF
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Nc2MasterAxis();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

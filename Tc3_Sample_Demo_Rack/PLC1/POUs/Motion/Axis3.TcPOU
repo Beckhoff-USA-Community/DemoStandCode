@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="Axis3" Id="{89ff8257-227f-4c6a-8138-0b26e1b4ea8e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Axis3
 VAR
@@ -27,22 +27,22 @@ VAR
 	bMaxPositionReached						:BOOL;	
 
 (* Couple Axis 3 on Axis 5 (Handwheel) *)
-	fbGearIn								:MC_GearIn;
+	fbGearIn								:Tc2_MC2.MC_GearIn;
 	bGearInDone								:BOOL;
 	bAxisCoupled							:BOOL;
 
 (* Uncouple Axis 3 *)
-	fbGearOut								:MC_GearOut;
+	fbGearOut								:Tc2_MC2.MC_GearOut;
 	bGearOutDone							:BOOL;
 	
 (*Superimposed and Buffered Moves*)
-	mv_Axis3Abs : MC_MoveAbsolute;
-	mv_Axis3Rel : MC_MoveRelative;
+	mv_Axis3Abs : Tc2_MC2.MC_MoveAbsolute;
+	mv_Axis3Rel : Tc2_MC2.MC_MoveRelative;
 	iMstrMvMode2	: INT;
 	bMvMstr2		: BOOL;
 	lrMstrTarg2		: LREAL := 90;
 	lrMstrVelo2		: LREAL := 10;
-	mv_MasterSprImp	: MC_MoveSuperImposed;
+	mv_MasterSprImp	: Tc2_MC2.MC_MoveSuperImposed;
 	bMvMstr3		: BOOL;
 	lrMstrTarg3		: LREAL := 90;
 
@@ -176,26 +176,5 @@ mv_MasterSprImp(
 			
 (* End *)]]></ST>
     </Implementation>
-    <LineIds Name="Axis3">
-      <LineId Id="3" Count="90" />
-      <LineId Id="149" Count="0" />
-      <LineId Id="130" Count="1" />
-      <LineId Id="133" Count="0" />
-      <LineId Id="146" Count="2" />
-      <LineId Id="132" Count="0" />
-      <LineId Id="150" Count="0" />
-      <LineId Id="154" Count="0" />
-      <LineId Id="159" Count="0" />
-      <LineId Id="157" Count="1" />
-      <LineId Id="151" Count="0" />
-      <LineId Id="160" Count="0" />
-      <LineId Id="162" Count="2" />
-      <LineId Id="174" Count="0" />
-      <LineId Id="161" Count="0" />
-      <LineId Id="176" Count="11" />
-      <LineId Id="175" Count="0" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

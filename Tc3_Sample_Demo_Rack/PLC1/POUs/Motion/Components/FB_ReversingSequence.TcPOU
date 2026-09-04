@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_ReversingSequence" Id="{fa921010-b102-4e67-a033-443b0bf7bb11}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ReversingSequence
 VAR_INPUT
@@ -23,7 +23,7 @@ VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
 
-	stAxis									:Axis_Ref;
+	stAxis									:Tc2_MC2.Axis_Ref;
 
 END_VAR
 VAR
@@ -31,8 +31,8 @@ VAR
 	eStateRevSeq							:E_AxisReversingSequence;
 	eRevSeqErrStep							:E_AxisReversingSequence := eAxisRevSeq_NoError;
 	fbTimerIdleTime							:TON;
-	fbMoveAbsolute							:MC_MoveAbsolute;
-	fbStop									:MC_Stop;
+	fbMoveAbsolute							:Tc2_MC2.MC_MoveAbsolute;
+	fbStop									:Tc2_MC2.MC_Stop;
 
 END_VAR
 (* End *)

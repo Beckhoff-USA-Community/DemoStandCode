@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MC3_ReversingSequence" Id="{73f6a007-36d7-4e3d-aa5a-9806aab4b0bf}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MC3_ReversingSequence
+VAR
+	bStart:		BOOL;
+	ax1:		Tc3_Mc3Ptp.AXIS_REF;
+	fbPower:	Tc3_Mc3Ptp.MC_Power;		
+	fbMoveAbs:	Tc3_Mc3Ptp.MC_MoveAbsolute;	
+	timer:		TON;
+	nState:		INT :=0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbPower
+(
+	Axis:=ax1,
+	Enable:=,
+	EnableNegative:=TRUE,
+	EnablePositive:=TRUE,
+);
+	
+
+CASE nState OF
+	0:
+	IF bStart THEN
+		fbPower.Enable:=TRUE;
+		nState:=nState+1;
+	END_IF
+
+	1:
+	IF fbPower.Status THEN
+		fbMoveAbs.Position:=4000.0;
+		fbMoveAbs.Velocity:=1000.0;
+		fbMoveAbs.Execute:=TRUE;
+		nState:=nState+1;
+	END_IF
+	
+	2:
+	IF NOT fbMoveAbs.Busy THEN
+		IF fbMoveAbs.Done THEN
+			fbMoveAbs.Execute:=FALSE;
+			timer.PT:=T#1S;
+			timer.IN:=TRUE;
+			nState:=nState+1;
+		END_IF
+	END_IF
+	
+	3:
+	IF timer.Q THEN
+		timer.IN:=FALSE;
+		fbMoveAbs.Position:=0000.0;
+		fbMoveAbs.Velocity:=1000.0;
+		fbMoveAbs.Execute:=TRUE;
+		nState:=nState+1;
+	END_IF
+	
+	4:
+	IF NOT fbMoveAbs.Busy THEN
+		IF fbMoveAbs.Done THEN
+			fbMoveAbs.Execute:=FALSE;
+			timer.PT:=T#1S;
+			timer.IN:=TRUE;
+		nState:=nState+1;
+		END_IF
+	END_IF
+
+	5:
+	IF timer.Q THEN
+		timer.IN:=FALSE;
+		nState:=0;
+	END_IF
+	
+END_CASE
+
+
+fbMoveAbs(Axis:=ax1);
+timer();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

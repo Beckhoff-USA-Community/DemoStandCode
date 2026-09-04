@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_Axis" Id="{2b5ecccc-bfee-4e3e-a987-c578df9f7ad9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Axis
 VAR_INPUT
@@ -35,16 +35,16 @@ VAR_OUTPUT
 END_VAR
 VAR_IN_OUT
 
-	stAxis									:Axis_Ref;
+	stAxis									:Tc2_MC2.Axis_Ref;
 
 END_VAR
 VAR
 
-	fbMcPower								:MC_Power;
-	fbMoveAbsolute							:MC_MoveAbsolute;
-	fbReadAxisError							:MC_ReadAxisError;
-	fbReset									:MC_Reset;
-	fbStop									:MC_Stop;
+	fbMcPower								:Tc2_MC2.MC_Power;
+	fbMoveAbsolute							:Tc2_MC2.MC_MoveAbsolute;
+	fbReadAxisError							:Tc2_MC2.MC_ReadAxisError;
+	fbReset									:Tc2_MC2.MC_Reset;
+	fbStop									:Tc2_MC2.MC_Stop;
 	fbReversingSequence						:FB_ReversingSequence;
 
 END_VAR

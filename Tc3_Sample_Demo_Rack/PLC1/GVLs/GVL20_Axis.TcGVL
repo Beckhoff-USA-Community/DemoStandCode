@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.3">
+<TcPlcObject Version="1.1.0.1">
   <GVL Name="GVL20_Axis" Id="{c0adfcf4-48b9-493d-b82b-23b17f51e519}">
     <Declaration><![CDATA[(* GVL20_Axis - Global variables axis *)
 {attribute 'TcContextName' := 'PlcTask'}
 VAR_GLOBAL
 	
 (* Axis 1 inputs and outputs *)
-	stAxis1									:AXIS_REF;
+	stAxis1									:Tc2_Mc2.AXIS_REF;
 
 (* Axis 2 inputs and outputs *)
-	stAxis2									:AXIS_REF;
+	stAxis2									:Tc2_Mc2.AXIS_REF;
 
 (* Axis 3 - 4 (AX5203) inputs and outputs *)
 	nAxis3TorqueFeedback			AT%I*	:INT;		(* Axis 3 current +/- 1000 *)
@@ -24,11 +24,11 @@ VAR_GLOBAL
 	nAX5203DigitalOutputs			AT%Q*	:UINT;		(* Digital output AX5000 
 															BIT 7 - Led H27 *)
 	
-	stAxis3									:AXIS_REF;
-	stAxis4									:AXIS_REF;
+	stAxis3									:Tc2_Mc2.AXIS_REF;
+	stAxis4									:Tc2_Mc2.AXIS_REF;
 
 (* Axis 5 (Handwheel) inputs and outputs *)
-	stAxis5									:AXIS_REF;
+	stAxis5									:Tc2_Mc2.AXIS_REF;
 
 END_VAR
 (* End *)]]></Declaration>
