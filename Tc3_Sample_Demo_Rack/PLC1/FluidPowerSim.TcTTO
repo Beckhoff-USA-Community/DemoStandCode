@@ -3,7 +3,7 @@
   <Task Name="FluidPowerSim" Id="{152bfd3c-8fe5-4de9-9eef-fcc4f5ae83d2}">
     <!--CycleTime in micro seconds.-->
     <CycleTime>2000</CycleTime>
-    <Priority>1</Priority>
+    <Priority>16</Priority>
     <PouCall>
       <Name>PressToTargetSim</Name>
     </PouCall>
