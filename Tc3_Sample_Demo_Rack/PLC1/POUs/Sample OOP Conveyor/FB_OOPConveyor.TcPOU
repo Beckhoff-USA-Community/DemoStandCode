@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_OOPConveyor" Id="{d69ddb99-b473-46c4-a9c8-3ebda1051ee9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_OOPConveyor
 VAR_INPUT
 	eSampleModeIn		: E_SampleMode;	
 END_VAR
 VAR_IN_OUT
-	AxisRef				: ARRAY [1..iMAX_AXES_REF] OF AXIS_REF;			// axis reference (process data plc/nc)
+	AxisRef				: ARRAY [1..iMAX_AXES_REF] OF Tc2_MC2.AXIS_REF;			// axis reference (process data plc/nc)
 END_VAR
 VAR_OUTPUT
 	eSampleModeOut		: E_SampleMode;	
@@ -284,9 +284,5 @@ IF (eSampleModeIn = eSMode_OOPConv_Req) OR (eSampleModeOut = eSMode_OOPConv_Act)
 	END_IF
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="FB_OOPConveyor">
-      <LineId Id="3" Count="211" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

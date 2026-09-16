@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <GVL Name="GVL" Id="{b31223e4-d801-463b-aea4-2814692ede38}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
 	iMAX_AXES_REF : INT := 5;
 END_VAR
+
 VAR_GLOBAL
 	iGlobalCounter : UINT;
 	fbCrititcalSection : FB_IecCriticalSection;
+END_VAR
+
+VAR_GLOBAL
+	{attribute 'TcContextName':='NC SAF'}
+	Nc2MasterAxis : Tc2_MC2.AXIS_REF;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

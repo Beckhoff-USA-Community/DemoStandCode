@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_OOPAxisTable" Id="{24c90dd5-7cce-473e-8b9e-0c30b19ee4f9}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_OOPAxisTable
 VAR_INPUT
 	eSampleModeIn	: E_SampleMode;	
 END_VAR
 VAR_IN_OUT
-	AxisRef			: ARRAY [1..iMAX_AXES_REF] OF AXIS_REF;			// axis reference (process data plc/nc)
+	AxisRef			: ARRAY [1..iMAX_AXES_REF] OF Tc2_MC2.AXIS_REF;			// axis reference (process data plc/nc)
 END_VAR
 VAR_OUTPUT
 	eSampleModeOut	: E_SampleMode;	
@@ -71,9 +71,5 @@ IF (eSampleModeIn = eSMode_OOP_Req) OR (eSampleModeOut = eSMode_OOP_Act) THEN
 	END_IF
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="FB_OOPAxisTable">
-      <LineId Id="3" Count="34" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

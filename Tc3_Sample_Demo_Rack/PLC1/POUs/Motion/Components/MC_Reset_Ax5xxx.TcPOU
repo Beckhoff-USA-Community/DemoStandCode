@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4018.5">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="MC_Reset_Ax5xxx" Id="{2e5c9b27-c363-4d5e-a4fc-b63acf9c6d18}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK MC_Reset_Ax5xxx
 VAR_INPUT
@@ -9,7 +9,7 @@ VAR_INPUT
 END_VAR
 VAR_IN_OUT
 
-	Axis	 								:AXIS_REF;
+	Axis	 								:Tc2_Mc2.AXIS_REF;
 
 END_VAR
 VAR_OUTPUT
@@ -27,7 +27,7 @@ VAR
 	bDriveIoDataInvalid						:BOOL;
 	bDriveError								:BOOL;
 
-	fbNcReset								:MC_Reset;
+	fbNcReset								:Tc2_Mc2.MC_Reset;
 	fbSoEReset								:FB_SoEReset;
 
 	eStateResetSeq							:E_McResetStatus;

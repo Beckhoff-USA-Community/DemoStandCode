@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="LoadControl" Id="{7ac3b81c-1936-491e-8fff-7099cc1714aa}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LoadControl
+VAR
+	bStart:				BOOL;
+	
+	HydAxis:			Tc3_Mc3FluidPower.AXIS_REF;
+	
+	fbPower:			Tc3_Mc3FluidPower.MC_Power;
+	fbMoveAbsFast:		Tc3_Mc3FluidPower.MC_MoveAbsolute;
+	fbMoveAbsSlow:		Tc3_Mc3FluidPower.MC_MoveAbsolute;
+	
+	fbPressureCtrl:		Tc3_Mc3FluidPower.MC_LoadControl;
+	
+	timer:				TON;	
+	
+	nState: 			INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbPower
+(
+	Axis:=HydAxis,
+	Enable:=TRUE,
+	EnableNegative:=TRUE,
+	EnablePositive:=TRUE
+);
+CASE nState OF
+	0:
+	IF 	bStart THEN
+		fbMoveAbsFast.Position:=100.0;
+		fbMoveAbsFast.Velocity:=80.0;
+		fbMoveAbsFast.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Aborting;
+		fbMoveAbsFast.Execute:=TRUE;
+
+		fbMoveAbsSlow.Position:=200.0;
+		fbMoveAbsSlow.Velocity:=2.0;
+		fbMoveAbsSlow.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Buffered;
+		fbMoveAbsSlow.Execute:=TRUE;
+
+		nState:=1;
+		bStart:=false;
+	END_IF
+	
+	1:
+	nState:=2;
+
+	2:
+	IF HydAxis.McToPlc.LoadControl.Act.Value > 10.0 THEN
+		fbPressureCtrl.Load:=100.0;
+		fbPressureCtrl.Execute:=TRUE;
+
+		nState:=3;
+	END_IF
+	
+	3:
+	fbPressureCtrl.Execute:=FALSE;
+	fbMoveAbsSlow.Execute:=FALSE;
+	fbMoveAbsFast.Execute:=FALSE;
+	IF 	fbPressureCtrl.InLoad THEN
+		timer.PT:=T#1S;
+		timer.IN:=TRUE;
+		nState:=4;
+	ELSIF HydAxis.McToPlc.Set.Position > 140.0 THEN
+		fbMoveAbsFast.Position:=0.0;
+		fbMoveAbsFast.Velocity:=50.0;
+		fbMoveAbsFast.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Aborting;
+
+		fbMoveAbsFast.Execute:=TRUE;
+		nState:=6;
+	END_IF
+	
+	4:
+	IF timer.Q THEN
+		fbPressureCtrl.Load:=10.0;
+		fbPressureCtrl.Execute:=TRUE;
+		nState:=5;
+	END_IF
+
+
+	5:
+	IF 	fbPressureCtrl.InLoad THEN
+		fbMoveAbsFast.Position:=0.0;
+		fbMoveAbsFast.Velocity:=50.0;
+
+		fbMoveAbsFast.Execute:=TRUE;
+		nState:=6;
+	END_IF
+	
+	6:
+	nState:=7;
+
+	7:
+	IF fbMoveAbsFast.Done THEN
+		timer.IN:=FALSE;
+		fbPressureCtrl.Execute:=FALSE;
+		fbMoveAbsSlow.Execute:=FALSE;
+		fbMoveAbsFast.Execute:=FALSE;
+		nState:=0;
+	END_IF	
+END_CASE
+
+
+
+timer();
+
+fbMoveAbsFast
+(
+	Axis:=HydAxis,
+);
+
+fbMoveAbsSlow
+(
+	Axis:=HydAxis,
+);
+
+
+fbPressureCtrl
+(
+	Axis:=HydAxis,
+	LoadRamp:=50.0,
+	LoadRampDerivative:=50.0
+);
+
+
+
+
+
+
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

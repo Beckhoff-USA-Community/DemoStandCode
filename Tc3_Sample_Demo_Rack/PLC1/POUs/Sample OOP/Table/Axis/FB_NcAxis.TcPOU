@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+<TcPlcObject Version="1.1.0.1">
   <POU Name="FB_NcAxis" Id="{5d6a72a7-952e-40b3-a7e1-a70763e93c3a}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_NcAxis IMPLEMENTS IAxis
 VAR_IN_OUT
-	sAxis		: AXIS_REF;
+	sAxis		: Tc2_Mc2.AXIS_REF;
 END_VAR
 VAR_INPUT
 END_VAR
@@ -17,12 +17,12 @@ VAR_OUTPUT
 END_VAR
 VAR
 	//PLCopen FBs for axes
-	fbMcPower	: MC_Power;
-	fbMcReset	: MC_Reset;
-	fbMcMoveAbs	: MC_MoveAbsolute;
-	fbMcMoveMod	: MC_MoveModulo;
-	fbMcMoveRel	: MC_MoveRelative;
-	fbMcMoveVel	: MC_MoveVelocity;
+	fbMcPower	: Tc2_Mc2.MC_Power;
+	fbMcReset	: Tc2_Mc2.MC_Reset;
+	fbMcMoveAbs	: Tc2_Mc2.MC_MoveAbsolute;
+	fbMcMoveMod	: Tc2_Mc2.MC_MoveModulo;
+	fbMcMoveRel	: Tc2_Mc2.MC_MoveRelative;
+	fbMcMoveVel	: Tc2_Mc2.MC_MoveVelocity;
 
 	//rising edge detection
 	bExecMove_	: BOOL;
@@ -253,32 +253,5 @@ M_Reset 	:= eCurState <> eAxisState_Idle;
 bExecReset_	:= bExecute;]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_NcAxis">
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_Diag">
-      <LineId Id="3" Count="5" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_Enable">
-      <LineId Id="3" Count="4" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_HardwareDiag">
-      <LineId Id="3" Count="14" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_HardwareReset">
-      <LineId Id="3" Count="12" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_Move">
-      <LineId Id="3" Count="89" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_NcAxis.M_Reset">
-      <LineId Id="3" Count="21" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

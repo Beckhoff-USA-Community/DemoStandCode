@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Task Name="FluidPowerSim" Id="{152bfd3c-8fe5-4de9-9eef-fcc4f5ae83d2}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>2000</CycleTime>
+    <Priority>16</Priority>
+    <PouCall>
+      <Name>PressToTargetSim</Name>
+    </PouCall>
+    <PouCall>
+      <Name>LoadControlSim</Name>
+    </PouCall>
+    <TaskFBGuid>{46626942-9bc9-4589-91e2-f5ba046d9606}</TaskFBGuid>
+    <Fb_init>{10875e53-6f13-4c88-9d60-fc2050e233e9}</Fb_init>
+    <Fb_exit>{e3c45092-7a1e-429e-8b8b-fd886d25667f}</Fb_exit>
+    <CycleUpdate>{7df44e02-a351-4d15-97e6-7206235a5da3}</CycleUpdate>
+    <PostCycleUpdate>{827d5810-d81f-4d68-b2ca-2d87598f6c3d}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

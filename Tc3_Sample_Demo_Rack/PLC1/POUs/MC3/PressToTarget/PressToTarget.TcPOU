@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PressToTarget" Id="{6d008a6c-81e2-4a1b-95a0-4ae8f96f7657}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PressToTarget
+VAR
+	bStart:				BOOL;
+	
+	HydAxis:			Tc3_Mc3FluidPower.AXIS_REF;
+	
+	fbPower:			Tc3_Mc3FluidPower.MC_Power;
+	fbMoveAbsFast:		Tc3_Mc3FluidPower.MC_MoveAbsolute;
+	fbMoveAbsSlow:		Tc3_Mc3FluidPower.MC_MoveAbsolute;
+	fbMoveRelative:		Tc3_Mc3FluidPower.MC_MoveRelative;
+	
+	fbPressureCtrl:		Tc3_Mc3FluidPower.MC_LoadControl;
+
+	timer:				TON;	
+	
+	nState: 			INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbPower
+(
+	Axis:=HydAxis,
+	Enable:=TRUE,
+	EnableNegative:=TRUE,
+	EnablePositive:=TRUE
+);
+CASE nState OF
+	0:
+	IF 	bStart THEN
+		fbMoveAbsFast.Position:=200.0;
+		fbMoveAbsFast.Velocity:=80.0;
+		fbMoveAbsFast.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Aborting;
+		fbMoveAbsFast.Execute:=TRUE;
+
+		fbMoveAbsSlow.Position:=201.0;
+		fbMoveAbsSlow.Velocity:=2.0;
+		fbMoveAbsSlow.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Buffered;
+		fbMoveAbsSlow.Execute:=TRUE;
+		
+		nState:=1;
+		bStart:=false;
+	END_IF
+	
+	1:
+	nState:=2;
+
+	2:
+	IF HydAxis.McToPlc.Set.Position > fbMoveAbsFast.Position THEN
+		fbPressureCtrl.Load:=300.0;
+		fbPressureCtrl.Execute:=TRUE;
+
+		nState:=3;
+	END_IF
+	
+	3:
+	fbPressureCtrl.Execute:=FALSE;
+	fbMoveAbsSlow.Execute:=FALSE;
+	fbMoveAbsFast.Execute:=FALSE;
+	IF 	fbPressureCtrl.InLoad THEN
+		timer.PT:=T#1S;
+		timer.IN:=TRUE;
+		nState:=4;
+	END_IF
+	
+	4:
+	IF timer.Q THEN
+		fbPressureCtrl.Load:=0.0;
+		fbPressureCtrl.Execute:=TRUE;
+		nState:=5;
+	END_IF
+
+
+	5:
+	IF 	fbPressureCtrl.InLoad THEN
+// 		fbMoveRelative.Distance:=-5;
+// 		fbMoveRelative.Velocity:=5.0;
+// 		fbMoveRelative.Execute:=TRUE;
+//		fbMoveAbsSlow.Position:=195;
+		fbMoveAbsSlow.Position:=180;
+		fbMoveAbsSlow.Velocity:=5.0;
+		fbMoveAbsSlow.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Aborting;
+		fbMoveAbsSlow.Execute:=TRUE;
+
+// 		fbMoveAbsFast.Position:=0.0;
+// 		fbMoveAbsFast.Velocity:=50.0;
+// 		fbMoveAbsFast.BufferMode:=Tc3_Mc3Ptp.EBufferMode.BlendingLow;
+// 		fbMoveAbsFast.Execute:=TRUE;
+
+		nState:=6;
+	END_IF
+	
+	6:
+	IF HydAxis.McToPlc.Set.Position < 198 THEN
+		fbMoveAbsFast.Position:=0.0;
+		fbMoveAbsFast.Velocity:=50.0;
+		fbMoveAbsFast.BufferMode:=Tc3_Mc3Ptp.EBufferMode.Aborting;
+		fbMoveAbsFast.Execute:=TRUE;
+		nState:=7;
+	end_if
+
+	7:
+	IF fbMoveAbsFast.Done THEN
+		timer.IN:=FALSE;
+		fbPressureCtrl.Execute:=FALSE;
+		fbMoveAbsSlow.Execute:=FALSE;
+		fbMoveAbsFast.Execute:=FALSE;
+		nState:=0;
+	END_IF	
+END_CASE
+
+
+
+timer();
+
+fbMoveAbsFast
+(
+	Axis:=HydAxis,
+);
+
+fbMoveAbsSlow
+(
+	Axis:=HydAxis,
+);
+
+fbMoveRelative
+(
+	Axis:=HydAxis,
+);
+
+
+fbPressureCtrl
+(
+	Axis:=HydAxis,
+	LoadRamp:=8000.0,
+	LoadRampDerivative:=100000.0
+);
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

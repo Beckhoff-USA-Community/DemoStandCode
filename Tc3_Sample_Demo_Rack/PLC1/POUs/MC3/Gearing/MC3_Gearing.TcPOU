@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MC3_Gearing" Id="{f4aea777-3778-472e-9876-702c9187d744}" SpecialFunc="None">
+    <Declaration><![CDATA[// Gearing sample
+// Shows electronic gearing with MC_GearIn (stationary and velocity (master) coupling) and MC_GearInPos
+// (position-synchronized coupling), plus error propagation between coupled axes.
+// Operation: set 'Command' (E_Command) to Enable, then a GearIn* command
+PROGRAM MC3_Gearing
+VAR
+	//
+	Axis : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.AXIS_REF;
+
+	//
+	McPower		   : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.MC_Power;
+	McReset		   : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.MC_Reset;
+	McHalt		   : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp. MC_Halt;
+	McSetPosition  : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.MC_SetPosition;
+	McMoveAbsolute : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.MC_MoveAbsolute;
+	McMoveVelocity : ARRAY[0..(AXES_COUNT - 1)] OF Tc3_Mc3Ptp.MC_MoveVelocity;
+
+	//
+	McGearIn					: Tc3_Mc3Ptp.MC_GearIn;
+	McGearInPos					: Tc3_Mc3Ptp.MC_GearInPos;
+	WaitForStableActualPosition : Tc3_Mc3Ptp.MC_WaitForStableActualPosition;
+
+	//
+	i		 : UDINT;
+	Sequence : UDINT;
+	Command	 : E_GearCommand;
+	ErrorId	 : UDINT;
+
+	// Error Testing
+	TriggerMasterError	  : BOOL;
+	TriggerSlaveError	  : BOOL;
+	ControlError		  : BOOL				   := TRUE;
+	ReactionToMasterError : EReactionToMasterError := EReactionToMasterError.TriggerSlaveError;
+	ReactionToSlaveError  : EReactionToSlaveError  := EReactionToSlaveError.TriggerMasterError;
+	McTriggerMasterError  : Tc3_Mc3Ptp.MC_TriggerError;
+	McTriggerSlaveError	  :Tc3_Mc3Ptp. MC_TriggerError;
+END_VAR
+
+VAR CONSTANT
+	AXES_COUNT : UDINT := 2;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Commands:
+    1- Enable
+       2 - GearInStationary ( MC_GearIn )
+	   3 - GearInVelocity   ( MC_GearIn )
+	   4 - GearInPosition   ( MC_GearInPos )
+    5 - Disable 
+*)
+CASE Sequence OF
+	0:
+		IF Command = E_GearCommand.Enable THEN
+			NextStep(Sequence);
+		END_IF
+
+	10:
+		IF Enable() THEN
+			Command := E_GearCommand.Idle;
+			SetStep(Sequence, 100);
+		END_IF
+
+	100:
+		IF Command = E_GearCommand.Disable THEN
+			SetStep(Sequence, 1000);
+		END_IF
+
+		IF Command = E_GearCommand.GearInStationary THEN
+			SetStep(Sequence, 200);
+		END_IF
+
+		IF Command = E_GearCommand.GearInVelocity THEN
+			SetStep(Sequence, 300);
+		END_IF
+
+		IF Command = E_GearCommand.GearInPosition THEN
+			SetStep(Sequence, 400);
+		END_IF
+
+	200:
+		IF GearInStationary() THEN
+			SetStep(Sequence, 500);
+		END_IF
+
+	300:
+		IF GearInVelocity() THEN
+			SetStep(Sequence, 500);
+		END_IF
+
+	400:
+		IF GearInPosition() THEN
+			SetStep(Sequence, 500);
+		END_IF
+
+	500:
+		IF Home() THEN
+			Command := E_GearCommand.Idle;
+			SetStep(Sequence, 100);
+		END_IF
+
+	1000:
+		IF Disable() THEN
+			Command := E_GearCommand.Idle;
+			SetStep(Sequence, 0);
+		END_IF
+END_CASE
+
+McTriggerMasterError(MotionObject := Axis[Master],
+				 Execute	  := TriggerMasterError,
+				 ErrorCode	  := 16#FFFFFFFF,
+				 ControlError := ControlError,
+				 Done		  =>,
+				 Busy		  =>,
+				 Error		  =>,
+				 ErrorId	  =>);
+
+McTriggerSlaveError(MotionObject := Axis[Slave],
+				Execute		 := TriggerSlaveError,
+				ErrorCode	 := 16#FFFFFFFF,
+				ControlError := ControlError,
+				Done		 =>,
+				Busy		 =>,
+				Error		 =>,
+				ErrorId		 =>);
+
+TriggerMasterError := TriggerSlaveError := FALSE;]]></ST>
+    </Implementation>
+    <Method Name="Disable" Id="{bd2f2e6e-c804-406b-a78b-2dc9011bb856}">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[McPower[Master](Axis		   := Axis[Master],
+				Enable		   := FALSE,
+				EnablePositive := FALSE,
+				EnableNegative := FALSE,
+				Status		   =>,
+				Error		   =>,
+				ErrorId		   =>);
+
+McPower[Slave](Axis			  := Axis[Slave],
+			   Enable		  := FALSE,
+			   EnablePositive := FALSE,
+			   EnableNegative := FALSE,
+			   Status		  =>,
+			   Error		  =>,
+			   ErrorId		  =>);
+
+Disable := NOT McPower[Master].Status AND NOT McPower[Slave].Status AND Axis[Master].McToPlc.Std.AxisState = EAxisState.Disabled AND Axis[Slave].McToPlc.Std.AxisState = EAxisState.Disabled;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{428ff0f4-987e-4042-8664-1f2f47185d4f}">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[McPower[Master](Axis		   := Axis[Master],
+				Enable		   := TRUE,
+				EnablePositive := TRUE,
+				EnableNegative := TRUE,
+				Status		   =>,
+				Error		   =>,
+				ErrorId		   =>);
+
+McPower[Slave](Axis			  := Axis[Slave],
+			   Enable		  := TRUE,
+			   EnablePositive := TRUE,
+			   EnableNegative := TRUE,
+			   Status		  =>,
+			   Error		  =>,
+			   ErrorId		  =>);
+
+Enable := McPower[Master].Status AND McPower[Slave].Status AND Axis[Master].McToPlc.Std.AxisState = EAxisState.Standstill AND Axis[Slave].McToPlc.Std.AxisState = EAxisState.Standstill;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GearInPosition" Id="{0d985959-1c6d-43fa-971f-d74f59125e8d}">
+      <Declaration><![CDATA[METHOD GearInPosition : BOOL
+VAR_INST
+    GearInSequence : UDINT;
+    //FB_
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE GearInSequence OF
+	0:
+		McMoveAbsolute[Master].Position := 1000;
+		McMoveAbsolute[Master].Execute	:= TRUE;
+		IF McMoveAbsolute[Master].Busy THEN
+			McMoveAbsolute[Master].Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	10: // Wait for Master to cover some distance as MC_GearInPos is instant in this version of MC3
+		IF Axis[Master].McToPlc.Act.Position >= 250 THEN
+			NextStep(GearInSequence);
+		END_IF
+
+	20:
+		McGearInPos.Execute := TRUE;
+		IF McGearInPos.InSync THEN
+			McGearInPos.Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	30:
+		WaitForStableActualPosition.Execute := TRUE;
+		IF WaitForStableActualPosition.InPositionWindow AND WaitForStableActualPosition.Done AND NOT McMoveAbsolute[Master].Busy THEN
+			McMoveAbsolute[Master].Execute		:= FALSE;
+			WaitForStableActualPosition.Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	40:
+		McHalt[Slave](Axis := Axis[Slave], Execute := TRUE);
+		IF NOT McHalt[Slave].Busy AND McHalt[Slave].Done THEN
+			McHalt[Slave](Axis := Axis[Slave], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	50:
+		SetStep(GearInSequence, 0);
+		GearInPosition := TRUE;
+END_CASE
+
+McMoveAbsolute[Master](Axis			:= Axis[Master],
+					   Velocity		:= 100,
+					   Acceleration := 1000,
+					   Deceleration := 500,
+					   Jerk			:= 1000,
+					   BufferMode	:= EBufferMode.Aborting);
+
+McGearInPos(Master				  := Axis[Master],
+			Slave				  := Axis[Slave],
+			RatioNumerator		  := 1,
+			RatioDenominator	  := 1,
+			MasterSyncPosition	  := 500,
+			SlaveSyncPosition	  := 250,
+			Velocity			  := 1000,
+			Acceleration		  := 1000,
+			Deceleration		  := 1000,
+			Jerk				  := 10000,
+			BufferMode			  := EBufferMode.Aborting,
+			ReactionToMasterError := ReactionToMasterError,
+			ReactionToSlaveError  := ReactionToSlaveError,
+			InSync				  =>,
+			Busy				  =>,
+			Active				  =>,
+			CommandAborted		  =>,
+			Error				  =>,
+			ErrorId				  =>,
+			MasterHasError		  =>);
+
+WaitForStableActualPosition(Axis			  := Axis[Master],
+							PositionTolerance := 0.001,
+							WaitDuration	  := 0.5,
+							TimeoutDuration	  := STRING_TO_LREAL('#Ignore'),
+							InPositionWindow  =>,
+							Done			  =>,
+							Busy			  =>,
+							Active			  =>,
+							CommandAborted	  =>,
+							Error			  =>,
+							ErrorId			  =>);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GearInStationary" Id="{dd0fe5df-5111-4da6-9662-637374bafbfa}">
+      <Declaration><![CDATA[METHOD GearInStationary : BOOL
+VAR_INST
+    GearInSequence : UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE GearInSequence OF
+	0:
+		McGearIn.Execute := TRUE;
+		IF McGearIn.InGear THEN
+			McGearIn.Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	10:
+		McMoveAbsolute[Master].Position := 1000;
+		McMoveAbsolute[Master].Execute	:= TRUE;
+		IF NOT McMoveAbsolute[Master].Busy AND McMoveAbsolute[Master].Done THEN
+			McMoveAbsolute[Master].Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	20:
+		McHalt[Slave](Axis := Axis[Slave], Execute := TRUE);
+		IF NOT McHalt[Slave].Busy AND McHalt[Slave].Done THEN
+			McHalt[Slave](Axis := Axis[Slave], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	30:
+		SetStep(GearInSequence, 0);
+		GearInStationary := TRUE;
+END_CASE
+
+McGearIn(Master				   := Axis[Master],
+		 Slave				   := Axis[Slave],
+		 RatioNumerator		   := 1,
+		 RatioDenominator	   := 2,
+		 ReactionToMasterError := ReactionToMasterError,
+		 ReactionToSlaveError  := ReactionToSlaveError);
+
+McMoveAbsolute[Master](Axis			:= Axis[Master],
+					   Velocity		:= 100,
+					   Acceleration := 1000,
+					   Deceleration := 500,
+					   Jerk			:= 1000,
+					   BufferMode	:= EBufferMode.Aborting);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GearInVelocity" Id="{74270931-864c-4055-a07f-a815286076de}">
+      <Declaration><![CDATA[METHOD GearInVelocity : BOOL
+VAR_INST
+	GearInSequence : UDINT;
+	WaitToGear	   : TON;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE GearInSequence OF
+	0:
+		McMoveVelocity[Master].Velocity := 100;
+		McMoveVelocity[Master].Execute	:= TRUE;
+		IF McMoveVelocity[Master].Busy AND McMoveVelocity[Master].InVelocity THEN
+			McMoveVelocity[Master].Execute := FALSE;
+			NextStep(GearInSequence);
+		END_IF
+
+	10:
+		WaitToGear(IN := TRUE, PT := T#1S);
+		IF WaitToGear.Q THEN
+			WaitToGear(IN := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	20:
+		McGearIn.Execute := TRUE;
+		IF McGearIn.InGear THEN
+			McGearIn(Master := Axis[Master], Slave := Axis[Slave], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	30:
+		WaitToGear(IN := TRUE, PT := T#2S);
+		IF WaitToGear.Q THEN
+			WaitToGear(IN := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	40:
+		McMoveVelocity[Master](Axis			:= Axis[Master],
+							   Execute		:= TRUE,
+							   Velocity		:= 500,
+							   Acceleration := 1000,
+							   Deceleration := 1000,
+							   Jerk			:= 10000,
+							   BufferMode	:= EBufferMode.Aborting);
+
+		IF McMoveVelocity[Master].Busy AND McMoveVelocity[Master].InVelocity THEN
+			McMoveVelocity[Master](Axis := Axis[Master], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	50:
+		WaitToGear(IN := TRUE, PT := T#2S);
+		IF WaitToGear.Q THEN
+			WaitToGear(IN := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	60:
+		McMoveVelocity[Master](Axis			:= Axis[Master],
+							   Execute		:= TRUE,
+							   Velocity		:= 150,
+							   Acceleration := 1000,
+							   Deceleration := 1000,
+							   Jerk			:= 10000,
+							   BufferMode	:= EBufferMode.Aborting);
+
+		IF McMoveVelocity[Master].Busy AND McMoveVelocity[Master].InVelocity THEN
+			McMoveVelocity[Master](Axis := Axis[Master], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	70:
+		WaitToGear(IN := TRUE, PT := T#2S);
+		IF WaitToGear.Q THEN
+			WaitToGear(IN := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	80:
+		McHalt[Master](Axis := Axis[Master], Execute := TRUE);
+		IF NOT McHalt[Master].Busy AND McHalt[Master].Done THEN
+			McHalt[Master](Axis := Axis[Master], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	90:
+		McHalt[Slave](Axis := Axis[Slave], Execute := TRUE);
+		IF NOT McHalt[Slave].Busy AND McHalt[Slave].Done THEN
+			McHalt[Slave](Axis := Axis[Slave], Execute := FALSE);
+			NextStep(GearInSequence);
+		END_IF
+
+	100:
+		GearInSequence := 0;
+		GearInVelocity := TRUE;
+END_CASE
+
+McGearIn(Master				   := Axis[Master],
+		 Slave				   := Axis[Slave],
+		 RatioNumerator		   := 1,
+		 RatioDenominator	   := 2,
+		 Acceleration		   := 1000,
+		 Deceleration		   := 1000,
+		 Jerk				   := 10000,
+		 BufferMode			   := EBufferMode.Aborting,
+		 ReactionToMasterError := ReactionToMasterError,
+		 ReactionToSlaveError  := ReactionToSlaveError);
+
+McMoveVelocity[Master](Axis			:= Axis[Master],
+					   Acceleration := 1000,
+					   Deceleration := 1000,
+					   Jerk			:= 10000,
+					   BufferMode	:= EBufferMode.Aborting);]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Home" Id="{fcadd73a-63cb-45ca-b8e8-49dac105ddfa}">
+      <Declaration><![CDATA[METHOD Home : BOOL
+VAR_INST
+    HomeSequence : UDINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE HomeSequence OF
+	0:
+		McSetPosition[Master](Axis	   := Axis[Master],
+							  Execute  := TRUE,
+							  Position := 0,
+							  Relative := FALSE);
+
+		IF McSetPosition[Master].Done AND NOT McSetPosition[Master].Busy THEN
+			NextStep(HomeSequence);
+		END_IF
+
+	10:
+		McSetPosition[Slave](Axis	  := Axis[Slave],
+							 Execute  := TRUE,
+							 Position := 0,
+							 Relative := FALSE);
+
+		IF McSetPosition[Slave].Done AND NOT McSetPosition[Slave].Busy THEN
+			NextStep(HomeSequence);
+		END_IF
+
+	20:
+		McSetPosition[Master](Axis := Axis[Master], Execute := FALSE, Position := 0);
+		McSetPosition[Slave](Axis := Axis[Master], Execute := FALSE, Position := 0);
+		SetStep(HomeSequence, 0);
+		Home := TRUE;
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

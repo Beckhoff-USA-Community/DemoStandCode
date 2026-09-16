@@ -6,7 +6,7 @@
     <ProjectGuid>{07e483bf-ec1e-4857-8e62-21f297de72b1}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>PLC1</Name>
-    <ProgramVersion>3.1.4026.14</ProgramVersion>
+    <ProgramVersion>3.1.4026.26</ProgramVersion>
     <Application>{f7d91749-fd71-47e0-b4c7-61c3f8e55a46}</Application>
     <TypeSystem>{5c54fdc8-1999-4725-9954-20223796a9de}</TypeSystem>
     <Implicit_Task_Info>{74e7ab00-ec4f-4f0c-b28d-81fcd17c2d36}</Implicit_Task_Info>
@@ -126,6 +126,9 @@
     <Compile Include="extMarkTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FluidPowerSim.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GlobalTextList.TcGTLO">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
@@ -157,12 +160,66 @@
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
     </Compile>
+    <Compile Include="NC_Task_1_SAF.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTaskFast.TcTTO">
       <SubType>Code</SubType>
       <ObjectProtection>00000000-0000-0000-0000-000000000000</ObjectProtection>
+    </Compile>
+    <Compile Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\ExtSetpoint_MC3_NC2.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\FB_ExtSg_FollowNcAxis.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\PRG_SAF.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\Support\E_Command.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\Support\E_State.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\MC3_Gearing.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\CompareLREAL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\E_Axis.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\E_GearCommand.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\NextMinorStep.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\NextStep.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\Gearing\Support\SetStep.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\LoadControl\LoadControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\LoadControl\LoadControlSim.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\PressToTarget\PressToTarget.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\PressToTarget\PressToTargetSim.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MC3\ReversingSequence\MC3_ReversingSequence.TcPOU">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Motion\CamTable.TcPOU">
       <SubType>Code</SubType>
@@ -598,10 +655,18 @@
     <Folder Include="POUs\MainPOUs" />
     <Folder Include="POUs\GeneralPlcBlocks" />
     <Folder Include="POUs\GeneralPlcBlocks\Components" />
+    <Folder Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2" />
+    <Folder Include="POUs\MC3\ExternalSetpoint_Mc3_Nc2\Support" />
+    <Folder Include="POUs\MC3\Gearing" />
+    <Folder Include="POUs\MC3\Gearing\Support" />
+    <Folder Include="POUs\MC3\LoadControl" />
+    <Folder Include="POUs\MC3\PressToTarget" />
+    <Folder Include="POUs\MC3\ReversingSequence" />
     <Folder Include="POUs\Motion" />
     <Folder Include="POUs\Motion\Components" />
     <Folder Include="POUs\EtherCatDiagnostic" />
     <Folder Include="POUs\EtherCatDiagnostic\Components" />
+    <Folder Include="POUs\MC3" />
     <Folder Include="POUs\RT Monitor" />
     <Folder Include="POUs\RT Monitor\logging" />
     <Folder Include="POUs\Sample OOP" />
@@ -759,6 +824,18 @@
     <PlaceholderReference Include="Tc3_JsonXml">
       <DefaultResolution>Tc3_JsonXml, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_JsonXml</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Mc3Base">
+      <DefaultResolution>Tc3_Mc3Base, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Mc3Base</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Mc3FluidPower">
+      <DefaultResolution>Tc3_Mc3FluidPower, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Mc3FluidPower</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Mc3Ptp">
+      <DefaultResolution>Tc3_Mc3Ptp, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Mc3Ptp</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -983,6 +1060,12 @@
               </a>
             </o>
           </d>
+        </o>
+        <v>{eeeeeeee-3909-4298-8022-501ac3238667}</v>
+        <o>
+          <v n="Name">"{eeeeeeee-3909-4298-8022-501ac3238667}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
         </o>
         <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
         <o>

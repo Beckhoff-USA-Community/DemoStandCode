@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_ExtSg_FollowNcAxis" Id="{dccdf130-1ae9-478a-a6fb-73eb43493522}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'c++_compatible'}
+FUNCTION_BLOCK FB_ExtSg_FollowNcAxis EXTENDS MC_ExternalSetpointGenerator IMPLEMENTS ITcMcExternalSetpointGenerator]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{5a70b32f-5683-4e8a-ac60-2378e603a5cc}">
+      <Declaration><![CDATA[{attribute 'TcTypeSystem'}
+METHOD FB_init : BOOL
+VAR_INPUT
+	(*  if TRUE, the retain variables are initialized (warm start / cold start) *)
+	bInitRetains	: BOOL;
+	(*  if TRUE, the instance afterwards gets moved into the copy code (online change) *)
+	bInCopyCode	: BOOL;
+	sObjectName	: STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="FB_reinit" Id="{1327c36a-9025-416a-8fe6-59bfe99d44d3}">
+      <Declaration><![CDATA[{attribute 'TcTypeSystem'}
+METHOD FB_reinit : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.FB_reinit();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnCyclicSetpointGeneration" Id="{7a377a6a-34cc-45f9-9b63-7dd9ee576fa9}">
+      <Declaration><![CDATA[{attribute 'TcTypeSystem'}
+{attribute 'c++_compatible'}
+METHOD OnCyclicSetpointGeneration : HRESULT
+VAR_INPUT
+	invokeId		 : XWORD;
+	timeInGeneration : LREAL;
+	position		 : REFERENCE TO LREAL;
+	velocity		 : REFERENCE TO LREAL;
+	acceleration	 : REFERENCE TO LREAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//GenerateSetpoint implementation 
+position				   := Nc2MasterAxis.NcToPlc.SetPos;
+velocity				   := Nc2MasterAxis.NcToPlc.SetVelo;
+acceleration			   := Nc2MasterAxis.NcToPlc.SetAcc;
+OnCyclicSetpointGeneration := S_OK;
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

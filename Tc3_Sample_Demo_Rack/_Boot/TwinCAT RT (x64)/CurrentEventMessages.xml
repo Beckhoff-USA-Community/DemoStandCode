@@ -84,6 +84,7 @@
 		</Text>
 		<Text TxtId="Accuracy option type out of range">
 			<Text LcId="1031">Der Genauigkeitoptionstyp außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Accuracy option type out of range</Text>
 		</Text>
 		<Text TxtId="Activate Sync0."/>
 		<Text TxtId="Activate Sync1."/>
@@ -102,6 +103,7 @@
 		<Text TxtId="Adjust the reader head to the measuring tape."/>
 		<Text TxtId="ADSDevID is unknown">
 			<Text LcId="1031">Unbekannte ADSDevID</Text>
+			<Text LcId="1033">ADSDevID is unknown</Text>
 		</Text>
 		<Text TxtId="AdsTransMode is not supported.">
 			<Text LcId="1031">AdsTransMode wird nicht unterstützt.</Text>
@@ -123,7 +125,9 @@
 		<Text TxtId="AMS Sync error.">
 			<Text LcId="1031">AMS Sync Fehler.</Text>
 		</Text>
-		<Text TxtId="AMS Sync Timeout."/>
+		<Text TxtId="AMS Sync Timeout.">
+			<Text LcId="1031">AMS Sync Timeout.</Text>
+		</Text>
 		<Text TxtId="AMS Sync Win32 error.">
 			<Text LcId="1031">AMS Sync Win32 Fehler.</Text>
 		</Text>
@@ -198,6 +202,7 @@
 		<Text TxtId="Assign a commutation angle."/>
 		<Text TxtId="Associated statement is not prepared">
 			<Text LcId="1031">Zugeordnete Anweisung ist nicht vorbereitet.</Text>
+			<Text LcId="1033">Associated statement is not prepared</Text>
 		</Text>
 		<Text TxtId="Asynchronous motor"/>
 		<Text TxtId="Asynchronous motor with feedback."/>
@@ -210,21 +215,27 @@
 		<Text TxtId="At word offset 0x{0,x} the configured number of CRCs of {1} exceeds the maximum number of CRCs ({2})"/>
 		<Text TxtId="Attempt to concatenate a null value">
 			<Text LcId="1031">ES WURDE 	Versucht, einen null-Wert zu verketten.</Text>
+			<Text LcId="1033">Attempt to concatenate a null value</Text>
 		</Text>
 		<Text TxtId="Attempt to fetch before the result set returned the first rowset">
 			<Text LcId="1031">Versucht, Daten abzurufen, bevor das Resultset das erste Rowset zurückgegeben.</Text>
+			<Text LcId="1033">Attempt to fetch before the result set returned the first rowset</Text>
 		</Text>
 		<Text TxtId="Attribute cannot be set now">
 			<Text LcId="1031">Attribut kann jetzt nicht festgelegt werden</Text>
+			<Text LcId="1033">Attribute cannot be set now</Text>
 		</Text>
 		<Text TxtId="Authentication failed">
 			<Text LcId="1031">Authentifizierung fehlgeschlagen</Text>
+			<Text LcId="1033">Authentication failed</Text>
 		</Text>
 		<Text TxtId="AutoLog could NOT be started. TwinCAT Database Server has no valid device state.">
 			<Text LcId="1031">Autologging konnte nicht gestartet werden. Der TwinCAT Database Server ist in einem ungültigen Zustand.</Text>
+			<Text LcId="1033">AutoLog could NOT be started. TwinCAT Database Server has no valid device state.</Text>
 		</Text>
 		<Text TxtId="AutoLogGrpID is unknown">
 			<Text LcId="1031">AutoLogGrpID is unbekannt</Text>
+			<Text LcId="1033">AutoLogGrpID is unknown</Text>
 		</Text>
 		<Text TxtId="AX5000_IDN-Description: &quot;"/>
 		<Text TxtId="AX5000_IDN-Description: &quot;&quot;P-x-0518&quot;"/>
@@ -306,9 +317,11 @@
 		<Text TxtId="Axis state machine: Invalid state"/>
 		<Text TxtId="Base table or view already exists">
 			<Text LcId="1031">Basistabelle oder-Sicht ist bereits vorhanden.</Text>
+			<Text LcId="1033">Base table or view already exists</Text>
 		</Text>
 		<Text TxtId="Base table or view not found">
 			<Text LcId="1031">Die Basistabelle oder-Sicht wurde nicht gefunden</Text>
+			<Text LcId="1033">Base table or view not found</Text>
 		</Text>
 		<Text TxtId="Battery is not connected to feedback power supply."/>
 		<Text TxtId="Battery voltage is under warinig threshold. Position is valid."/>
@@ -334,9 +347,11 @@
 		<Text TxtId="Call our support dept. and replace the feedback database."/>
 		<Text TxtId="Cannot modify an implementation row descriptor">
 			<Text LcId="1031">Ein Implementierungszeilendeskriptor kann nicht geändert werden.</Text>
+			<Text LcId="1033">Cannot modify an implementation row descriptor</Text>
 		</Text>
 		<Text TxtId="Cardinality violation">
 			<Text LcId="1031">Verletzung der Kardinalität</Text>
+			<Text LcId="1033">Cardinality violation</Text>
 		</Text>
 		<Text TxtId="Carry out a software update for the AX570x option card."/>
 		<Text TxtId="Change battery. Set Flag &quot;Ignor and reset feedback battery error&quot; in P-0357 for one PreOp to SafeOp transition. In Op reference the position and then clear the flag in P-0-0357."/>
@@ -411,17 +426,21 @@
 		<Text TxtId="Clear flag &quot;Reset for one PreOp-&gt;SafeOp transition feedback battery warning&quot; in P-0-0357."/>
 		<Text TxtId="Client unable to establish connection">
 			<Text LcId="1031">Client kann keine Verbindung herstellen.</Text>
+			<Text LcId="1033">Client unable to establish connection</Text>
 		</Text>
 		<Text TxtId="Closed loop ramp"/>
 		<Text TxtId="Code error."/>
 		<Text TxtId="Column already exists">
 			<Text LcId="1031">Spalte ist bereits vorhanden.</Text>
+			<Text LcId="1033">Column already exists</Text>
 		</Text>
 		<Text TxtId="Column not found">
 			<Text LcId="1031">Spalte wurde nicht gefunden</Text>
+			<Text LcId="1033">Column not found</Text>
 		</Text>
 		<Text TxtId="Column type out of range">
 			<Text LcId="1031">Spaltentyp außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Column type out of range</Text>
 		</Text>
 		<Text TxtId="Command error"/>
 		<Text TxtId="Command rejected: {0}, {1}">
@@ -438,6 +457,7 @@
 		</Text>
 		<Text TxtId="Communication link failure">
 			<Text LcId="1031">Kommunikations-Verbindungsfehler</Text>
+			<Text LcId="1033">Communication link failure</Text>
 		</Text>
 		<Text TxtId="Communication problems between control card and driver card."/>
 		<Text TxtId="Communication problems with the feedback system."/>
@@ -450,27 +470,32 @@
 			<Text LcId="1031">Konfigurationsfehler: 0x{0,X}, 0x{1,X}, 0x{2,X}</Text>
 		</Text>
 		<Text TxtId="Configure a motor."/>
-		<Text TxtId="Configured safety option don't match"/>
 		<Text TxtId="Connect and use a multi-turn feedback as feedback 1."/>
 		<Text TxtId="Connect and use a multi-turn feedback as feedback 2."/>
 		<Text TxtId="Connect battery to feedback. Set Flag &quot;Ignor and reset feedback battery error&quot; in P-0357 for one PreOp to Safe=p transition. In Op reference the position and then clear the flag in P-0-0357."/>
 		<Text TxtId="Connection error occured">
 			<Text LcId="1031">Verbindungsfehler aufgetreten</Text>
+			<Text LcId="1033">Connection error occured</Text>
 		</Text>
 		<Text TxtId="Connection exception">
 			<Text LcId="1031">Verbindungsfehler</Text>
+			<Text LcId="1033">Connection exception</Text>
 		</Text>
 		<Text TxtId="Connection failure during transaction">
 			<Text LcId="1031">Verbindungsfehler während der Transaktion</Text>
+			<Text LcId="1033">Connection failure during transaction</Text>
 		</Text>
 		<Text TxtId="Connection name in use">
 			<Text LcId="1031">Name der Verbindung bereits verwendet</Text>
+			<Text LcId="1033">Connection name in use</Text>
 		</Text>
 		<Text TxtId="Connection not open">
 			<Text LcId="1031">Verbindung nicht geöffnet</Text>
+			<Text LcId="1033">Connection not open</Text>
 		</Text>
 		<Text TxtId="Connection timeout expired">
 			<Text LcId="1031">Das Verbindungstimeout ist abgelaufen</Text>
+			<Text LcId="1033">Connection timeout expired</Text>
 		</Text>
 		<Text TxtId="Connection Type is not supported at word-offset 0x{0,x} of the cfg data"/>
 		<Text TxtId="Contact support."/>
@@ -502,21 +527,27 @@
 		<Text TxtId="Cooling error shut down."/>
 		<Text TxtId="Corrupt file data source">
 			<Text LcId="1031">Beschädigte Datei als Datenquelle</Text>
+			<Text LcId="1033">Corrupt file data source</Text>
 		</Text>
 		<Text TxtId="Could not find PLCDBWrite Value in list">
 			<Text LcId="1031">PLCDBWrite Wert konnte nicht in der Liste gefunden werden</Text>
+			<Text LcId="1033">Could not find PLCDBWrite Value in list</Text>
 		</Text>
 		<Text TxtId="Could not find routine information (procedure, function) in database">
 			<Text LcId="1031">Es können keine Routinen Informationen (Prozedur, Funktion) in der Datenbank gefunden werden.</Text>
+			<Text LcId="1033">Could not find routine information (procedure, function) in database</Text>
 		</Text>
 		<Text TxtId="Couldn't find PLCDBCommand Parameter in list.">
 			<Text LcId="1031">Es können keine PLCDBCmd Parameter in der Liste gefunden werden.</Text>
+			<Text LcId="1033"><![CDATA[Couldn't find PLCDBCommand Parameter in list.]]></Text>
 		</Text>
 		<Text TxtId="Couldn't find PLCDBCommand Value in list.">
 			<Text LcId="1031">Es können keine PLCDBCmd Werte in der Liste gefunden werden.</Text>
+			<Text LcId="1033"><![CDATA[Couldn't find PLCDBCommand Value in list.]]></Text>
 		</Text>
 		<Text TxtId="COUNT field incorrect">
 			<Text LcId="1031">Falsches COUNT-Feld</Text>
+			<Text LcId="1033">COUNT field incorrect</Text>
 		</Text>
 		<Text TxtId="CRC-Error on the EtherCAT bus"/>
 		<Text TxtId="Creation of the position interpolator failed"/>
@@ -537,6 +568,7 @@
 		<Text TxtId="Current Values are not in increasing order"/>
 		<Text TxtId="Cursor operation conflict">
 			<Text LcId="1031">Konflikt beim Cursorvorgang</Text>
+			<Text LcId="1033">Cursor operation conflict</Text>
 		</Text>
 		<Text TxtId="Cycle time o.k.: {0}">
 			<Text LcId="1031">Zykluszeit o.k.: {0}</Text>
@@ -546,30 +578,39 @@
 		</Text>
 		<Text TxtId="Data exception">
 			<Text LcId="1031">Daten Fehler</Text>
+			<Text LcId="1033">Data exception</Text>
 		</Text>
 		<Text TxtId="Data source name not found and no default driver specified">
 			<Text LcId="1031">Datenquellenname, die nicht gefunden und kein Standardtreiber angegeben</Text>
+			<Text LcId="1033">Data source name not found and no default driver specified</Text>
 		</Text>
 		<Text TxtId="Data source name too long">
 			<Text LcId="1031">Der Datenquellenname ist zu lang.</Text>
+			<Text LcId="1033">Data source name too long</Text>
 		</Text>
 		<Text TxtId="Database connection already open">
 			<Text LcId="1031">Datenbankverbindung ist bereits geöffnet</Text>
+			<Text LcId="1033">Database connection already open</Text>
 		</Text>
 		<Text TxtId="Database connection not initialized">
 			<Text LcId="1031">Datenbankverbindung ist nicht initialisiert</Text>
+			<Text LcId="1033">Database connection not initialized</Text>
 		</Text>
 		<Text TxtId="Database Errors of TwinCAT Database Server">
 			<Text LcId="1031">Datenbank Fehler  vom TwinCAT Database Server</Text>
+			<Text LcId="1033">Database Errors of TwinCAT Database Server</Text>
 		</Text>
 		<Text TxtId="Database side error. Please check the information log for more details.">
 			<Text LcId="1031">Datenbankseitiger Fehler. Prüfen Sie das Informationsprotokoll für weitere Details.</Text>
+			<Text LcId="1033">Database side error. Please check the information log for more details.</Text>
 		</Text>
 		<Text TxtId="Datetime field overflow">
 			<Text LcId="1031">Überlauf im DateTime-Feld</Text>
+			<Text LcId="1033">Datetime field overflow</Text>
 		</Text>
 		<Text TxtId="DBID is unknown">
 			<Text LcId="1031">Unbekannte DBID</Text>
+			<Text LcId="1033">DBID is unknown</Text>
 		</Text>
 		<Text TxtId="DC link overvoltage because the brake power is too low"/>
 		<Text TxtId="DC link overvoltage error with error reaction torque off."/>
@@ -584,10 +625,13 @@
 		<Text TxtId="Deactivate the phase monitoring by means of IDN P-0-0204 bit 3. If you had assumed a 3-phase mains supply during the project engineering, check in the IDN P-0-0092 and P-0-0093 whether you need to enter a derating."/>
 		<Text TxtId="Dead time error."/>
 		<Text TxtId="Debug firmware: Replace ASAP!"/>
-		<Text TxtId="Debug: 0x{0,X}, 0x{1,X}, 0x{2,X}"/>
+		<Text TxtId="Debug: 0x{0,X}, 0x{1,X}, 0x{2,X}">
+			<Text LcId="1031">Debug: 0x{0,X}, 0x{1,X}, 0x{2,X}</Text>
+		</Text>
 		<Text TxtId="Defective feedback system, parametrized internal resolution is too high."/>
 		<Text TxtId="Degree of derived table does not match column list">
 			<Text LcId="1031">Spaltenzahl der abgeleiteten Tabelle stimmt nicht mit der Spaltenliste überein</Text>
+			<Text LcId="1033">Degree of derived table does not match column list</Text>
 		</Text>
 		<Text TxtId="Demo license prohibited.">
 			<Text LcId="1031">Demo-Lizenz untersagt.</Text>
@@ -619,6 +663,7 @@
 		<Text TxtId="DiagType"/>
 		<Text TxtId="Dialog failed">
 			<Text LcId="1031">Dialogfehler</Text>
+			<Text LcId="1033">Dialog failed</Text>
 		</Text>
 		<Text TxtId="Die Parameter &quot;Resolution per rotation; Length pro signal period; Linear resolution&quot; must be greater than 0."/>
 		<Text TxtId="Disable and re-enable the modulo calculation."/>
@@ -629,6 +674,7 @@
 		<Text TxtId="Disable the position offset."/>
 		<Text TxtId="Disconnect error">
 			<Text LcId="1031">Fehler beim Trennen</Text>
+			<Text LcId="1033">Disconnect error</Text>
 		</Text>
 		<Text TxtId="Disconnect the servo drive from the mains (including the 24 V power supply) and start a new attempt. If this error occurs repeatedly, please call our support."/>
 		<Text TxtId="Disconnect the servo drive from the mains (including the 24 V power supply) and start a new attempt. If this error occurs repeatedly, please call the Beckhoff branch office that is responsible for you."/>
@@ -638,8 +684,10 @@
 		</Text>
 		<Text TxtId="Division by zero">
 			<Text LcId="1031">Division durch 0 (null)</Text>
+			<Text LcId="1033">Division by zero</Text>
 		</Text>
 		<Text TxtId="Don't try to enable the axis while one of this functions is active."/>
+		<Text TxtId="Double check and adjust P-0-2000."/>
 		<Text TxtId="Drive is calibrated: {0}, {1}">
 			<Text LcId="1031">Antrieb ist kalibriert: {0}, {1}</Text>
 		</Text>
@@ -652,27 +700,34 @@
 		<Text TxtId="Drive off delay time in S-0-0273 is smaller than the sum of the error reaction times in P-x-0356"/>
 		<Text TxtId="Driver does not support this function">
 			<Text LcId="1031">Diese Funktion wird vom Treiber nicht unterstützt werden.</Text>
+			<Text LcId="1033">Driver does not support this function</Text>
 		</Text>
 		<Text TxtId="DRIVER keyword syntax error">
 			<Text LcId="1031">Syntaxfehler für DRIVER-Schlüsselwort</Text>
+			<Text LcId="1033">DRIVER keyword syntax error</Text>
 		</Text>
 		<Text TxtId="Driver name too long">
 			<Text LcId="1031">Der Treibername ist zu lang.</Text>
+			<Text LcId="1033">Driver name too long</Text>
 		</Text>
 		<Text TxtId="Driver unit error: undervoltage"/>
 		<Text TxtId="Driver$'s SQLAllocHandle on SQL_HANDLE_DBC failed">
 			<Text LcId="1031">Der Treiber SQLAllocHandle auf SQL_HANDLE_DBC auf Fehler</Text>
+			<Text LcId="1033"><![CDATA[Driver$'s SQLAllocHandle on SQL_HANDLE_DBC failed]]></Text>
 		</Text>
 		<Text TxtId="Driver$'s SQLAllocHandle on SQL_HANDLE_ENV failed">
 			<Text LcId="1031">Der Treiber SQLAllocHandle auf SQL_HANDLE_ENV auf Fehler</Text>
+			<Text LcId="1033"><![CDATA[Driver$'s SQLAllocHandle on SQL_HANDLE_ENV failed]]></Text>
 		</Text>
 		<Text TxtId="Driver$'s SQLSetConnectAttr failed">
 			<Text LcId="1031">Der Treiber SQLSetConnectAttr Fehler</Text>
+			<Text LcId="1033"><![CDATA[Driver$'s SQLSetConnectAttr failed]]></Text>
 		</Text>
 		<Text TxtId="DSP clock error."/>
 		<Text TxtId="DSP watchdog error."/>
 		<Text TxtId="Duplicate cursor name">
 			<Text LcId="1031">Doppelter Cursorname</Text>
+			<Text LcId="1033">Duplicate cursor name</Text>
 		</Text>
 		<Text TxtId="During phase calibration the resolver output voltage fell below the maximum amplitude value."/>
 		<Text TxtId="During phase calibration the resolver output voltage fell below the minimum amplitude value."/>
@@ -680,11 +735,14 @@
 		<Text TxtId="During the motor replacement a motor with different feedback was connected."/>
 		<Text TxtId="Dynamic SQL error">
 			<Text LcId="1031">Dynamischer SQL Fehler</Text>
+			<Text LcId="1033">Dynamic SQL error</Text>
 		</Text>
 		<Text TxtId="Dynamic SyncManager: IO-Cycle counter error"/>
 		<Text TxtId="Dynamic SyncManager: Required SyncManager not enabled."/>
 		<Text TxtId="Either the feedback or the sense line is faulty."/>
-		<Text TxtId="EL6910, TwinSAFE PLC"/>
+		<Text TxtId="EL6910, TwinSAFE PLC">
+			<Text LcId="1031">EL6910, TwinSAFE PLC</Text>
+		</Text>
 		<Text TxtId="EL7037 1Ch. Stepper motor output stage (24V, 1.5A)">
 			<Text LcId="1031">EL7037 1K. Schrittmotor-Endstufe (24V, 1.5A)</Text>
 		</Text>
@@ -720,6 +778,7 @@
 		<Text TxtId="Error clearing operation time. (timeout)"/>
 		<Text TxtId="Error in row">
 			<Text LcId="1031">Fehler in Zeile</Text>
+			<Text LcId="1033">Error in row</Text>
 		</Text>
 		<Text TxtId="Error in the setting of the controlled supply voltage (Sense)"/>
 		<Text TxtId="Error in Win32 subsystem">
@@ -729,6 +788,7 @@
 		<Text TxtId="Error management: Initialization failed"/>
 		<Text TxtId="Error occured during write operation">
 			<Text LcId="1031">Ein Fehler ist während eines Schreibzugriffs aufgetreten</Text>
+			<Text LcId="1033">Error occured during write operation</Text>
 		</Text>
 		<Text TxtId="Error Power Management: Check external DC link connection"/>
 		<Text TxtId="Error Power Management: Load resistor active and axis enabled"/>
@@ -746,6 +806,7 @@
 		<Text TxtId="Error saving factory settings.(timeout)"/>
 		<Text TxtId="Error saving File DSN">
 			<Text LcId="1031">Fehler beim Speichern der Datei-DSN</Text>
+			<Text LcId="1033">Error saving File DSN</Text>
 		</Text>
 		<Text TxtId="Error saving the hardware IDs."/>
 		<Text TxtId="Error, feedback parameter channel, can't create object."/>
@@ -785,6 +846,7 @@
 		<Text TxtId="Execute the command for each axis one after the other."/>
 		<Text TxtId="Execution Timeout">
 			<Text LcId="1031">erlaubte Ausführungszeit überschritten</Text>
+			<Text LcId="1033">Execution Timeout</Text>
 		</Text>
 		<Text TxtId="Explicit Device Identification: Write of the data failed."/>
 		<Text TxtId="Extern chopper mode not parameterized"/>
@@ -950,6 +1012,7 @@
 		<Text TxtId="FB-Muting: if SequentialInputs is TRUE, all MuteIn signals have to be active at offset 0x{0,x}"/>
 		<Text TxtId="FB_DBRead selected value is NULL">
 			<Text LcId="1031">FB_DBRead gewählter Wert ist NULL</Text>
+			<Text LcId="1033">FB_DBRead selected value is NULL</Text>
 		</Text>
 		<Text TxtId="Feedback (EnDat2.2) CRC error. Invalid feedback temperature 1 or 2 (P-0-0169)."/>
 		<Text TxtId="Feedback (EnDat2.2) diagnostic data error. Invalid feedback error word, warning word, temperature 1 / 2 (P-0-0169)."/>
@@ -1033,6 +1096,7 @@
 		</Text>
 		<Text TxtId="Fetch type out of range">
 			<Text LcId="1031">Fetchtyp außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Fetch type out of range</Text>
 		</Text>
 		<Text TxtId="Firmware download: Control unit eeprom not accessible."/>
 		<Text TxtId="Firmware download: Driver unit eeprom not accessible."/>
@@ -1044,6 +1108,7 @@
 		<Text TxtId="Format error counters in e2prom successful!"/>
 		<Text TxtId="Format error occurred on command execution. Please check the command or document syntax.">
 			<Text LcId="1031">Formatierungsfehler ist bei der Befehlsausführung aufgetreten. Überprüfen Sie die Befehls oder Documenten Syntax.</Text>
+			<Text LcId="1033">Format error occurred on command execution. Please check the command or document syntax.</Text>
 		</Text>
 		<Text TxtId="Found not supported hardware type."/>
 		<Text TxtId="FPGA error: load failed"/>
@@ -1055,21 +1120,26 @@
 		<Text TxtId="FPGA logic:DC link overvoltage"/>
 		<Text TxtId="Fractional truncation">
 			<Text LcId="1031">Teilbereiche wurden abgeschnitten</Text>
+			<Text LcId="1033">Fractional truncation</Text>
 		</Text>
 		<Text TxtId="Front unit, build drive system: Timeout reached by disabling cyclic mainloop commands"/>
 		<Text TxtId="Front unit: End of stack reached"/>
 		<Text TxtId="Front unit: Main loop time exceeded"/>
 		<Text TxtId="Function not implemented">
 			<Text LcId="1031">Funktion nicht implementiert.</Text>
+			<Text LcId="1033">Function not implemented</Text>
 		</Text>
 		<Text TxtId="Function sequence error">
 			<Text LcId="1031">Fehler in der Funktionsreihenfolge</Text>
+			<Text LcId="1033">Function sequence error</Text>
 		</Text>
 		<Text TxtId="Function type out of range">
 			<Text LcId="1031">Typ der Funktion außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Function type out of range</Text>
 		</Text>
 		<Text TxtId="Functionality is not supported by the TwinCAT Database Server">
 			<Text LcId="1031">Funktionalität wird vom TwinCAT Database Server nicht unterstützt</Text>
+			<Text LcId="1033">Functionality is not supported by the TwinCAT Database Server</Text>
 		</Text>
 		<Text TxtId="Further information can be found in the &quot;Beckhoff Information System&quot; on the homepage of www.Beckhoff.de."/>
 		<Text TxtId="Further information can be found in the IDN S-0-0021."/>
@@ -1079,11 +1149,13 @@
 		</Text>
 		<Text TxtId="General error">
 			<Text LcId="1031">Allgemeiner Fehler.</Text>
+			<Text LcId="1033">General error</Text>
 		</Text>
 		<Text TxtId="General measurement error; measure the brake resistor and compare the ohmic value determined to the data on the type label."/>
 		<Text TxtId="General processing of the serial flash memory data has failed."/>
 		<Text TxtId="General warning">
 			<Text LcId="1031">Allgemeine Warnung</Text>
+			<Text LcId="1033">General warning</Text>
 		</Text>
 		<Text TxtId="Hardware enable not active."/>
 		<Text TxtId="Hardware error"/>
@@ -1096,6 +1168,7 @@
 		</Text>
 		<Text TxtId="Http communication error">
 			<Text LcId="1031">Http Kommunikations Fehler</Text>
+			<Text LcId="1033">Http communication error</Text>
 		</Text>
 		<Text TxtId="I/O update takes place at the end of the task."/>
 		<Text TxtId="I2C communication: Channel operation time overflow"/>
@@ -1162,6 +1235,7 @@
 		<Text TxtId="Inadmissible current deviation during command function P-0-0160."/>
 		<Text TxtId="Inconsistent descriptor information">
 			<Text LcId="1031">Inkonsistente deskriptorinformation</Text>
+			<Text LcId="1033">Inconsistent descriptor information</Text>
 		</Text>
 		<Text TxtId="Incorrect drive configuration: 0x{0,X}, {1}">
 			<Text LcId="1031">Antrieb fehlerhaft konfiguriert: 0x{0,X}, {1}</Text>
@@ -1172,21 +1246,27 @@
 		<Text TxtId="Increase the time period, if the application allows this."/>
 		<Text TxtId="Index already exists">
 			<Text LcId="1031">Index ist bereits vorhanden.</Text>
+			<Text LcId="1033">Index already exists</Text>
 		</Text>
 		<Text TxtId="Index not found">
 			<Text LcId="1031">Der Index wurde nicht gefunden.</Text>
+			<Text LcId="1033">Index not found</Text>
 		</Text>
 		<Text TxtId="Indicator variable required but not supplied">
 			<Text LcId="1031">Anzeigevariable erforderlich, aber nicht angegeben</Text>
+			<Text LcId="1033">Indicator variable required but not supplied</Text>
 		</Text>
 		<Text TxtId="Info"/>
 		<Text TxtId="Info procedure command: state change"/>
 		<Text TxtId="Information / Warning"/>
 		<Text TxtId="Information message from the status machine: The axis has been started."/>
-		<Text TxtId="Information: 0x{0,X}, 0x{1,X}, 0x{2,X}"/>
+		<Text TxtId="Information: 0x{0,X}, 0x{1,X}, 0x{2,X}">
+			<Text LcId="1031">Information: 0x{0,X}, 0x{1,X}, 0x{2,X}</Text>
+		</Text>
 		<Text TxtId="Information: No reset required."/>
 		<Text TxtId="Init of AutoLog Groups failed">
 			<Text LcId="1031">Initialisierung der Autologgruppen ist fehlgeschlagen</Text>
+			<Text LcId="1033">Init of AutoLog Groups failed</Text>
 		</Text>
 		<Text TxtId="Initialization of the ADCs was unsuccessful."/>
 		<Text TxtId="Initialization of the feedback system failed."/>
@@ -1201,6 +1281,7 @@
 		<Text TxtId="Insert the card again in the slot."/>
 		<Text TxtId="Insert value list does not match column list">
 			<Text LcId="1031">Die Liste einzufügender Werte entspricht nicht der Spaltenliste.</Text>
+			<Text LcId="1033">Insert value list does not match column list</Text>
 		</Text>
 		<Text TxtId="Install an actual bootloader version."/>
 		<Text TxtId="Install an actual firmware file."/>
@@ -1209,6 +1290,7 @@
 		</Text>
 		<Text TxtId="Integrity constraint violation">
 			<Text LcId="1031">Verletzung der integritätseinschränkung</Text>
+			<Text LcId="1033">Integrity constraint violation</Text>
 		</Text>
 		<Text TxtId="Interface query failed.">
 			<Text LcId="1031">Interface Abfrage fehlgeschlagen.</Text>
@@ -1229,16 +1311,19 @@
 		<Text TxtId="Internal message!"/>
 		<Text TxtId="Internal MongoDB exception. Please check the information log for more details.">
 			<Text LcId="1031">Interner MongoDB Fehler. Prüfen Sie das Informationsprotokoll für weitere Details.</Text>
+			<Text LcId="1033">Internal MongoDB exception. Please check the information log for more details.</Text>
 		</Text>
 		<Text TxtId="Internal software error in the resolver evaluation algorithm."/>
 		<Text TxtId="Internal software error."/>
 		<Text TxtId="Internal software exception."/>
 		<Text TxtId="Internal TwinCAT 3 Database Server Error">
 			<Text LcId="1031">Interner TwinCAT 3 Database Server Fehler</Text>
+			<Text LcId="1033">Internal TwinCAT 3 Database Server Error</Text>
 		</Text>
 		<Text TxtId="Internal warning of the feedback system."/>
 		<Text TxtId="Interval field overflow">
 			<Text LcId="1031">Überlauf bei Intervallfeld</Text>
+			<Text LcId="1033">Interval field overflow</Text>
 		</Text>
 		<Text TxtId="Invalid alignment.">
 			<Text LcId="1031">Ungültiges Alignment.</Text>
@@ -1257,30 +1342,37 @@
 		</Text>
 		<Text TxtId="Invalid application buffer type">
 			<Text LcId="1031">Ungültiger Anwendungspuffertyp</Text>
+			<Text LcId="1033">Invalid application buffer type</Text>
 		</Text>
 		<Text TxtId="Invalid array index.">
 			<Text LcId="1031">Ungültiger Array-Index.</Text>
 		</Text>
 		<Text TxtId="Invalid attribute value">
 			<Text LcId="1031">Ungültiger Attributwert</Text>
+			<Text LcId="1033">Invalid attribute value</Text>
 		</Text>
 		<Text TxtId="Invalid attribute/option identifier">
 			<Text LcId="1031">Ungültiger Attribut-/Optionsbezeichner</Text>
+			<Text LcId="1033">Invalid attribute/option identifier</Text>
 		</Text>
 		<Text TxtId="Invalid authorization specification">
 			<Text LcId="1031">Ungültige Autorisierungsangabe</Text>
+			<Text LcId="1033">Invalid authorization specification</Text>
 		</Text>
 		<Text TxtId="Invalid bookmark value">
 			<Text LcId="1031">Ungültiger Wert für Lesezeichen</Text>
+			<Text LcId="1033">Invalid bookmark value</Text>
 		</Text>
 		<Text TxtId="Invalid catalog name">
 			<Text LcId="1031">Ungültiger Katalogname</Text>
+			<Text LcId="1033">Invalid catalog name</Text>
 		</Text>
 		<Text TxtId="Invalid certificate.">
 			<Text LcId="1031">Zertifikat ungültig.</Text>
 		</Text>
 		<Text TxtId="Invalid character value for cast specification">
 			<Text LcId="1031">Ungültiger Zeichenwert für Konvertierungsangabe</Text>
+			<Text LcId="1033">Invalid character value for cast specification</Text>
 		</Text>
 		<Text TxtId="Invalid client timeout value.">
 			<Text LcId="1031">Ungültiger Client Timeout-Wert.</Text>
@@ -1290,36 +1382,46 @@
 		</Text>
 		<Text TxtId="Invalid connection string attribute">
 			<Text LcId="1031">Ungültiges Attribut der Verbindungszeichenfolge</Text>
+			<Text LcId="1033">Invalid connection string attribute</Text>
 		</Text>
 		<Text TxtId="Invalid cursor name">
 			<Text LcId="1031">Ungültiger Cursorname</Text>
+			<Text LcId="1033">Invalid cursor name</Text>
 		</Text>
 		<Text TxtId="Invalid cursor position">
 			<Text LcId="1031">Ungültige Cursorposition</Text>
+			<Text LcId="1033">Invalid cursor position</Text>
 		</Text>
 		<Text TxtId="Invalid cursor state">
 			<Text LcId="1031">Ungültiger Cursorstatus</Text>
+			<Text LcId="1033">Invalid cursor state</Text>
 		</Text>
 		<Text TxtId="Invalid data value(s).">
 			<Text LcId="1031">Ungültige Daten-Werte.</Text>
 		</Text>
 		<Text TxtId="Invalid datetime format">
 			<Text LcId="1031">Ungültiges Datetime-format</Text>
+			<Text LcId="1033">Invalid datetime format</Text>
 		</Text>
 		<Text TxtId="Invalid descriptor field identifier">
 			<Text LcId="1031">Ungültiger Deskriptorfeldbezeichner</Text>
+			<Text LcId="1033">Invalid descriptor field identifier</Text>
 		</Text>
 		<Text TxtId="Invalid descriptor index">
 			<Text LcId="1031">Ungültiger Deskriptorindex</Text>
+			<Text LcId="1033">Invalid descriptor index</Text>
 		</Text>
 		<Text TxtId="Invalid driver completion">
 			<Text LcId="1031">Ungültiger Treiberabschluss.</Text>
+			<Text LcId="1033">Invalid driver completion</Text>
 		</Text>
 		<Text TxtId="Invalid escape character">
 			<Text LcId="1031">Ungültiges Escapezeichen</Text>
+			<Text LcId="1033">Invalid escape character</Text>
 		</Text>
 		<Text TxtId="Invalid escape sequence">
 			<Text LcId="1031">Ungültige Escapesequenz</Text>
+			<Text LcId="1033">Invalid escape sequence</Text>
 		</Text>
 		<Text TxtId="Invalid FB output size size at offset {0} of the Replacement Values Cfg Data"/>
 		<Text TxtId="Invalid feedback parameterization."/>
@@ -1337,9 +1439,11 @@
 		</Text>
 		<Text TxtId="Invalid information type">
 			<Text LcId="1031">Ungültiger Informationstyp</Text>
+			<Text LcId="1033">Invalid information type</Text>
 		</Text>
 		<Text TxtId="Invalid keyword">
 			<Text LcId="1031">Ungültiges Schlüsselwort</Text>
+			<Text LcId="1033">Invalid keyword</Text>
 		</Text>
 		<Text TxtId="Invalid modulo factor: {0}">
 			<Text LcId="1031">Modulo-Faktor ungültig: {0}</Text>
@@ -1352,12 +1456,14 @@
 		</Text>
 		<Text TxtId="Invalid name of File DSN">
 			<Text LcId="1031">Ungültiger Name der Datei-DSN</Text>
+			<Text LcId="1033">Invalid name of File DSN</Text>
 		</Text>
 		<Text TxtId="Invalid operating system context. This can result from use of ADS function blocks in different tasks.">
 			<Text LcId="1031">Ungültiger Kontext vom Betriebssystem. Kann durch Verwendung von ADS Bausteinen in unterschiedlichen Tasks auftreten.</Text>
 		</Text>
 		<Text TxtId="Invalid Parameter">
 			<Text LcId="1031">Ungültiger Parameter</Text>
+			<Text LcId="1033">Invalid Parameter</Text>
 		</Text>
 		<Text TxtId="Invalid parameter &quot;P-0-0150 / P-0-0180 --&gt;Para channel--&gt;Linear resolution about digital interface&quot; must greater than 0."/>
 		<Text TxtId="Invalid parameter in IDN &quot; P-0-0150 / P-0-0180 --&gt;Para channel--&gt;Linear resolution about digital interface&quot; must greater than 0. "/>
@@ -1366,9 +1472,11 @@
 		<Text TxtId="Invalid parameter in IDN &quot; P-0-0150 / P-0-0180 --&gt;Process channel--&gt;Data--&gt;Sin / Cos--&gt;signal periods per rotation&quot; "/>
 		<Text TxtId="Invalid parameter size">
 			<Text LcId="1031">Ungültige Parametergröße</Text>
+			<Text LcId="1033">Invalid parameter size</Text>
 		</Text>
 		<Text TxtId="Invalid parameter type">
 			<Text LcId="1031">Ungültiger Parametertyp</Text>
+			<Text LcId="1033">Invalid parameter type</Text>
 		</Text>
 		<Text TxtId="Invalid parameter value(s).">
 			<Text LcId="1031">Ungültige Parameter-Werte.</Text>
@@ -1379,26 +1487,31 @@
 		</Text>
 		<Text TxtId="Invalid precision or scale value">
 			<Text LcId="1031">Ungültiger Wert für Genauigkeit oder Dezimalstellenanzahl</Text>
+			<Text LcId="1033">Invalid precision or scale value</Text>
 		</Text>
 		<Text TxtId="Invalid response received">
 			<Text LcId="1031">Ungültige Antwort erhalten.</Text>
 		</Text>
 		<Text TxtId="Invalid retrieval code">
 			<Text LcId="1031">Ungültiger Abrufcode</Text>
+			<Text LcId="1033">Invalid retrieval code</Text>
 		</Text>
 		<Text TxtId="Invalid Safe User Parameter Offset at word offset 0x{0,x} (Calculated=0x{1,x}, Expected=0x{2,x})"/>
 		<Text TxtId="Invalid Safe User Parameter size at byte offset 0x{0,x} (Found={1}, Expected={2})"/>
 		<Text TxtId="Invalid schema name">
 			<Text LcId="1031">Ungültiger Schemaname</Text>
+			<Text LcId="1033">Invalid schema name</Text>
 		</Text>
 		<Text TxtId="Invalid signature.">
 			<Text LcId="1031">Ungültige Signatur.</Text>
 		</Text>
 		<Text TxtId="Invalid SQL data type">
 			<Text LcId="1031">Ungültiger SQL-Datentyp</Text>
+			<Text LcId="1033">Invalid SQL data type</Text>
 		</Text>
 		<Text TxtId="Invalid string or buffer length">
 			<Text LcId="1031">Ungültige Zeichenfolgen- oder Pufferlänge.</Text>
+			<Text LcId="1033">Invalid string or buffer length</Text>
 		</Text>
 		<Text TxtId="Invalid symbol version. This can occur due to an online change. Create a new handle.">
 			<Text LcId="1031">Symbol-Version ist ungültig. Kann durch einen Online-Change auftreten. Erzeuge einen neuen Handle.</Text>
@@ -1408,18 +1521,23 @@
 		</Text>
 		<Text TxtId="Invalid transaction operation code">
 			<Text LcId="1031">Ungültiger Transaktionsvorgangscode</Text>
+			<Text LcId="1033">Invalid transaction operation code</Text>
 		</Text>
 		<Text TxtId="Invalid transaction state">
 			<Text LcId="1031">Ungültiger Transaktionsstatus</Text>
+			<Text LcId="1033">Invalid transaction state</Text>
 		</Text>
 		<Text TxtId="Invalid use of an automatically allocated descriptor handle">
 			<Text LcId="1031">Ungültige Verwendung von einer automatisch zugeordneten Deskriptorhandles</Text>
+			<Text LcId="1033">Invalid use of an automatically allocated descriptor handle</Text>
 		</Text>
 		<Text TxtId="Invalid use of default parameter">
 			<Text LcId="1031">Ungültige Verwendung des Standardparameters</Text>
+			<Text LcId="1033">Invalid use of default parameter</Text>
 		</Text>
 		<Text TxtId="Invalid use of null pointer">
 			<Text LcId="1031">Ungültige Verwendung eines null-Zeiger</Text>
+			<Text LcId="1033">Invalid use of null pointer</Text>
 		</Text>
 		<Text TxtId="Invoke ID is already in use.">
 			<Text LcId="1031">Die Invoke-ID ist bereits in Benutzung.</Text>
@@ -1474,6 +1592,7 @@
 		</Text>
 		<Text TxtId="Limit on the number of handles exceeded">
 			<Text LcId="1031">Grenzwert für die Anzahl von Handles wurde überschritten</Text>
+			<Text LcId="1033">Limit on the number of handles exceeded</Text>
 		</Text>
 		<Text TxtId="Limit: Amplifier I2T-model exceeds 100%">
 			<Text LcId="1031">Limit: Verstärker I2T-Modell übersteigt 100%</Text>
@@ -1518,9 +1637,11 @@
 		<Text TxtId="Measure the  resistance of the brake resistor"/>
 		<Text TxtId="Memory allocation error">
 			<Text LcId="1031">Fehler bei der Speicherbelegung</Text>
+			<Text LcId="1033">Memory allocation error</Text>
 		</Text>
 		<Text TxtId="Memory management error">
 			<Text LcId="1031">Fehler bei arbeitsspeicherverwaltung</Text>
+			<Text LcId="1033">Memory management error</Text>
 		</Text>
 		<Text TxtId="Missing implementation!"/>
 		<Text TxtId="Missing license.">
@@ -1569,9 +1690,11 @@
 		<Text TxtId="No control loops allocated. Calibration mode active."/>
 		<Text TxtId="No cursor name available">
 			<Text LcId="1031">Es ist kein Cursorname verfügbar</Text>
+			<Text LcId="1033">No cursor name available</Text>
 		</Text>
 		<Text TxtId="No data source or driver specified; dialog prohibited">
 			<Text LcId="1031">Keine Datenquelle oder Treiber angegeben; Dialogfeld nicht zulässig</Text>
+			<Text LcId="1033">No data source or driver specified; dialog prohibited</Text>
 		</Text>
 		<Text TxtId="No debugging available.">
 			<Text LcId="1031">Kein Debugging verfügbar.</Text>
@@ -1579,6 +1702,7 @@
 		<Text TxtId="No EnDat 2.2 feedback system is installed."/>
 		<Text TxtId="No error">
 			<Text LcId="1031">kein Fehler</Text>
+			<Text LcId="1033">No Error</Text>
 		</Text>
 		<Text TxtId="No feedback connection has been parametrized."/>
 		<Text TxtId="No feedback signal from the feedback system."/>
@@ -1604,9 +1728,11 @@
 		<Text TxtId="No motor is configured."/>
 		<Text TxtId="No open ADS Device connection found for ADSDevID: xy">
 			<Text LcId="1031">Keine offene Verbindung zum ADS-Gerät mit der ADSDevID: xy</Text>
+			<Text LcId="1033">No open ADS Device connection found for ADSDevID: xy</Text>
 		</Text>
 		<Text TxtId="No open database connection found FOR DBID: xy">
 			<Text LcId="1031">Keine offene Datenbankverbindung für DBID: xy</Text>
+			<Text LcId="1033">No open database connection found FOR DBID: xy</Text>
 		</Text>
 		<Text TxtId="No real-time.">
 			<Text LcId="1031">Keine Echtzeit.</Text>
@@ -1620,6 +1746,7 @@
 		<Text TxtId="No valid commutation offset."/>
 		<Text TxtId="No valid symbol TYPE">
 			<Text LcId="1031">Kein gültiger Symboldatentyp</Text>
+			<Text LcId="1033">No valid symbol TYPE</Text>
 		</Text>
 		<Text TxtId="No variable linkage">
 			<Text LcId="1031">Keine Variablen verknüpft</Text>
@@ -1629,9 +1756,11 @@
 		<Text TxtId="No write access to the serial flash memory."/>
 		<Text TxtId="Non-character and non-binary data sent in pieces">
 			<Text LcId="1031">Nicht-Zeichendaten und nicht binäre Daten wurden in Einzelteilen versandt</Text>
+			<Text LcId="1033">Non-character and non-binary data sent in pieces</Text>
 		</Text>
 		<Text TxtId="NoSql Database Errors of TwinCAT Database Server">
 			<Text LcId="1031">NoSql Datenbank Fehler von TwinCAT Database Server</Text>
+			<Text LcId="1033">NoSql Database Errors of TwinCAT Database Server</Text>
 		</Text>
 		<Text TxtId="NoSql_Specific_53_DisplayText">
 			<Text LcId="1031">Die Erstellung der Abfrage über den Query Builder ist fehlgeschlagen. Möglicherweise gibt es falsche Eingabeparameter.</Text>
@@ -1651,15 +1780,19 @@
 		</Text>
 		<Text TxtId="NULL value eliminated in set function">
 			<Text LcId="1031">NULL-Wert in der Set-Funktion entfernt</Text>
+			<Text LcId="1033">NULL value eliminated in set function</Text>
 		</Text>
 		<Text TxtId="NULL Values not allowed">
 			<Text LcId="1031">NULL Werte sind nicht erlaubt</Text>
+			<Text LcId="1033">NULL Values not allowed</Text>
 		</Text>
 		<Text TxtId="Nullable type out of range">
 			<Text LcId="1031">Nullable-Typs außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Nullable type out of range</Text>
 		</Text>
 		<Text TxtId="Numeric value out of range">
 			<Text LcId="1031">Numerischer Wert außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Numeric value out of range</Text>
 		</Text>
 		<Text TxtId="Object already exists.">
 			<Text LcId="1031">Objekt ist bereits vorhanden.</Text>
@@ -1748,6 +1881,7 @@
 		<Text TxtId="Open loop ramp"/>
 		<Text TxtId="Operation canceled">
 			<Text LcId="1031">Der Vorgang wurde abgebrochen</Text>
+			<Text LcId="1033">Operation canceled</Text>
 		</Text>
 		<Text TxtId="Operation mode incompatible to PDO interface: 0x{0,X}, {1}">
 			<Text LcId="1031">Betriebsart inkompatibel zum PDO-Interface: 0x{0,X}, {1}</Text>
@@ -1758,9 +1892,11 @@
 		<Text TxtId="Option slot card: Commutation feedback not supported."/>
 		<Text TxtId="Option value changed">
 			<Text LcId="1031">Optionswert geändert</Text>
+			<Text LcId="1033">Option value changed</Text>
 		</Text>
 		<Text TxtId="Optional feature not implemented">
 			<Text LcId="1031">Optionales Feature nicht implementiert.</Text>
+			<Text LcId="1033">Optional feature not implemented</Text>
 		</Text>
 		<Text TxtId="Out of memory."/>
 		<Text TxtId="Out of timer."/>
@@ -1786,7 +1922,9 @@
 		<Text TxtId="Parameterization of the brake chopper is wrong"/>
 		<Text TxtId="Parameterize a feedback system."/>
 		<Text TxtId="Parameterize the IDN P-0-0316 accordingly."/>
-		<Text TxtId="PD-Watchdog"/>
+		<Text TxtId="PD-Watchdog">
+			<Text LcId="1031">PD-Watchdog</Text>
+		</Text>
 		<Text TxtId="Periphery voltage missing."/>
 		<Text TxtId="Periphery voltage too high."/>
 		<Text TxtId="Periphery voltage too low."/>
@@ -1860,6 +1998,7 @@
 		<Text TxtId="Power surge error limit can be read out in P-0-0206"/>
 		<Text TxtId="Prepared statement not a cursor-specification">
 			<Text LcId="1031">Keine vorbereitete Anweisung eine Cursor-Spezifikation</Text>
+			<Text LcId="1033">Prepared statement not a cursor-specification</Text>
 		</Text>
 		<Text TxtId="Primary MC: Completed RAM TEST: Starttime: 0x{0,x} and Stoptime: 0x{1,x} . The calculated timediff is 0x{2,x}."/>
 		<Text TxtId="Primary MC: GLOBAL_Fault with Code 0x{0,x} and Additional Code 0x{1,x}"/>
@@ -1868,9 +2007,11 @@
 		<Text TxtId="Primary MC: the CRC of the FRAM Data was wrong (Diag-Code={0})"/>
 		<Text TxtId="Privilege not granted">
 			<Text LcId="1031">Berechtigung wurde nicht erteilt</Text>
+			<Text LcId="1033">Privilege not granted</Text>
 		</Text>
 		<Text TxtId="Privilege not revoked">
 			<Text LcId="1031">Berechtigung nicht aufgehoben.</Text>
+			<Text LcId="1033">Privilege not revoked</Text>
 		</Text>
 		<Text TxtId="Probe unit configuration: Activate signal configuration error."/>
 		<Text TxtId="Probe unit error: (internal error)"/>
@@ -1904,6 +2045,7 @@
 		</Text>
 		<Text TxtId="Record select value return=&gt; Wrong Parametersize from ADS-Device">
 			<Text LcId="1031"><![CDATA[Rückgabewert bei Lesezugriff auf Datensatz => Falsche Parametergröße vom ADS-Gerät]]></Text>
+			<Text LcId="1033"><![CDATA[Record select value return=> Wrong Parametersize from ADS-Device]]></Text>
 		</Text>
 		<Text TxtId="Rectify the cable breakage and perform a reset."/>
 		<Text TxtId="Rectify the malfunction in the safety zone of the machine/plant and perform a reset."/>
@@ -1928,6 +2070,7 @@
 		<Text TxtId="Restart the EtherCAT-Master."/>
 		<Text TxtId="Restricted data type attribute violation">
 			<Text LcId="1031">Attributverletzung eingeschränkter Daten</Text>
+			<Text LcId="1033">Restricted data type attribute violation</Text>
 		</Text>
 		<Text TxtId="Return code of TwinCAT Database Server"/>
 		<Text TxtId="Rotary motor: You have selected the wrong motor and thus possibly also the wrong feedback system."/>
@@ -1935,9 +2078,11 @@
 		<Text TxtId="Rotatory: &quot;Bit resolution single-turn position&quot; / &quot;Number of clock cycles to get single-turn position&quot; over 32 bit."/>
 		<Text TxtId="Row value out of range">
 			<Text LcId="1031">Zeilenwert außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Row value out of range</Text>
 		</Text>
 		<Text TxtId="RunCommand execution failed. Please check the event log for more information">
 			<Text LcId="1031">RunCommand Ausführung ist fehlgeschlagen. Prüfen Sie das Informationsprotokoll für weitere Details.</Text>
+			<Text LcId="1033">RunCommand execution failed. Please check the event log for more information</Text>
 		</Text>
 		<Text TxtId="Runtime error"/>
 		<Text TxtId="Safety card type not supported."/>
@@ -1968,6 +2113,7 @@
 		<Text TxtId="SCI communication Front&lt;-&gt;Control unit: Wrong checksum"/>
 		<Text TxtId="Scope type out of range">
 			<Text LcId="1031">Bereichstyp außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Scope type out of range</Text>
 		</Text>
 		<Text TxtId="Screw the AX5000 firmly to the metallic rear panel."/>
 		<Text TxtId="Screw the motor plug(s) firmly to the AX5000."/>
@@ -1985,12 +2131,15 @@
 		<Text TxtId="Sending of device notification has failed in the SoE communication layer."/>
 		<Text TxtId="Serialization failure">
 			<Text LcId="1031">Serialisierungsfehler</Text>
+			<Text LcId="1033">Serialization failure</Text>
 		</Text>
 		<Text TxtId="Server declined cancel request">
 			<Text LcId="1031">Cancel-Anforderung wurde vom Server abgelehnt</Text>
+			<Text LcId="1033">Server declined cancel request</Text>
 		</Text>
 		<Text TxtId="Server rejected the connection">
 			<Text LcId="1031">Der Server wies die Verbindung ab</Text>
+			<Text LcId="1033">Server rejected the connection</Text>
 		</Text>
 		<Text TxtId="Service contains an invalid parameter.">
 			<Text LcId="1031">Dienst enthält einen ungültigen Parameter. </Text>
@@ -2027,6 +2176,7 @@
 		<Text TxtId="Software exception"/>
 		<Text TxtId="Specified driver could not be loaded">
 			<Text LcId="1031">Angegebene Treiber konnte nicht geladen werden</Text>
+			<Text LcId="1033">Specified driver could not be loaded</Text>
 		</Text>
 		<Text TxtId="Speed limitation active">
 			<Text LcId="1031">Geschwindigkeit wird begrenzt</Text>
@@ -2039,6 +2189,7 @@
 		<Text TxtId="Startup phase of the feedback system could not be successfully completed."/>
 		<Text TxtId="Statement completion unknown">
 			<Text LcId="1031">Unbekannter Anweisungsabschluss</Text>
+			<Text LcId="1033">Statement completion unknown</Text>
 		</Text>
 		<Text TxtId="Status word set: 0x{0,X}, {1}">
 			<Text LcId="1031">Statuswort gesetzt: 0x{0,X}, {1}</Text>
@@ -2048,9 +2199,11 @@
 		</Text>
 		<Text TxtId="String data, length mismatch">
 			<Text LcId="1031">Zeichenfolgendaten, nicht übereinstimmende Länge</Text>
+			<Text LcId="1033">String data, length mismatch</Text>
 		</Text>
 		<Text TxtId="String data, right-truncated">
 			<Text LcId="1031">Zeichenfolgendaten Sie, rechts abgeschnitten</Text>
+			<Text LcId="1033">String data, right-truncated</Text>
 		</Text>
 		<Text TxtId="Subincrements deactivated: {0}, {1}">
 			<Text LcId="1031">Subinkremente deaktiviert: {0}, {1}</Text>
@@ -2066,6 +2219,7 @@
 		</Text>
 		<Text TxtId="SymbolListID is unknown">
 			<Text LcId="1031">SymbolListID ist unbekannt</Text>
+			<Text LcId="1033">SymbolListID is unknown</Text>
 		</Text>
 		<Text TxtId="Sync Manager 2 Address (0x{0,x}) is inavlid, minimum value = 0x{1,x}, maximum value = 0x{2,x}"/>
 		<Text TxtId="Sync Manager 2 Size ({0}) is inavlid, minimum value = {1}, maximum value = {2}"/>
@@ -2087,17 +2241,20 @@
 		<Text TxtId="Synchronous motor, current-controlled without feedback"/>
 		<Text TxtId="Syntax error in command / filter">
 			<Text LcId="1031">Syntax-Fehler im Befehl oder Filter</Text>
+			<Text LcId="1033">Syntax error in command / filter</Text>
 		</Text>
 		<Text TxtId="Syntax error in file or command.">
 			<Text LcId="1031">Syntax-Fehler in Datei oder Befehl.</Text>
 		</Text>
 		<Text TxtId="Syntax error or access violation">
 			<Text LcId="1031">Syntaxfehler oder Zugriffsverletzung</Text>
+			<Text LcId="1033">Syntax error or access violation</Text>
 		</Text>
 		<Text TxtId="System time underflow error."/>
 		<Text TxtId="System timer underflow."/>
 		<Text TxtId="TableID is unknown">
 			<Text LcId="1031">TableID ist unbekannt</Text>
+			<Text LcId="1033">TableID is unknown</Text>
 		</Text>
 		<Text TxtId="Target computer not found – AMS route was not found. "/>
 		<Text TxtId="Target overrun: {0}, {1}">
@@ -2210,6 +2367,7 @@
 		<Text TxtId="The commutation offset entered in the digital name plate of the motor is invalid."/>
 		<Text TxtId="The commutation offset has not been entered in the digital name plate or the value is not plausible."/>
 		<Text TxtId="The complete size of the SafeCfgData related to the Group {0} was wrong"/>
+		<Text TxtId="The configuration in P-0-2000 does not match the installed safety option card."/>
 		<Text TxtId="The configuration of the &quot;distributed clocks&quot; is optimally set as standard by the TwinCAT system and should be ready to run without any problems. Any changes that may be required should only be carried out by well-trained specialists."/>
 		<Text TxtId="The configured channel current is greater than the amplifier rated current."/>
 		<Text TxtId="The configured channel current is greater than the motor continuous stall current."/>
@@ -2363,6 +2521,7 @@
 		<Text TxtId="The FB-Type is unknown at offet 0x{0,x}"/>
 		<Text TxtId="The feature is not supported">
 			<Text LcId="1031">Das Feature wird nicht unterstützt</Text>
+			<Text LcId="1033">The feature is not supported</Text>
 		</Text>
 		<Text TxtId="The feedback 1 position calculation was not finished in time. Error reaction is open loop ramp."/>
 		<Text TxtId="The feedback connector is not correctly attached."/>
@@ -2636,9 +2795,11 @@
 		<Text TxtId="The pulse sequence of the digital traces (cosine and sine) is incorrect."/>
 		<Text TxtId="The queried data is empty">
 			<Text LcId="1031">Die zurückgelieferten Daten sind leer.</Text>
+			<Text LcId="1033">The queried data is empty</Text>
 		</Text>
 		<Text TxtId="The queried data is in wrong format">
 			<Text LcId="1031">Die zurückgelieferten Daten sind im falschen Format.</Text>
+			<Text LcId="1033">The queried data is in wrong format</Text>
 		</Text>
 		<Text TxtId="The rated current coded in the identity object isn't supported."/>
 		<Text TxtId="The re-converted FB-Mapping-Code was not matching to the FB Cfg Data (FB: {0}, Code-Address: 0x{1,x}, Offset: 0x{2,x})"/>
@@ -2688,6 +2849,7 @@
 		<Text TxtId="The requested number of users is too big"/>
 		<Text TxtId="The requested symbol is not determinable. Please check the name and datatype">
 			<Text LcId="1031">Das angefragte Symbol ist nicht bestimmbar. Bitte Name und Datentyp überprüfen.</Text>
+			<Text LcId="1033">The requested symbol is not determinable. Please check the name and datatype</Text>
 		</Text>
 		<Text TxtId="The reserved area of the CfgData was not 0"/>
 		<Text TxtId="The reserved bits are set in value {0} at offset {1} when trying to activate or deactive groups"/>
@@ -2845,6 +3007,7 @@
 		<Text TxtId="The {0}. group has no more errors"/>
 		<Text TxtId="There are no explicit metadata information for the table available. Please check the configured entries.">
 			<Text LcId="1031">Es sind keine expliziten Metainformationen für diese Tabelle verfügbar. Bitte die konfigurierten Eingaben überprüfen</Text>
+			<Text LcId="1033">There are no explicit metadata information for the table available. Please check the configured entries.</Text>
 		</Text>
 		<Text TxtId="There is a large amount of interference to the feedback signal."/>
 		<Text TxtId="There is an &quot;external voltage&quot; on the sense line of the feedback system &quot;1&quot;."/>
@@ -2854,6 +3017,7 @@
 		<Text TxtId="There is an internal software error."/>
 		<Text TxtId="There is no metadata including the tableschema for this table">
 			<Text LcId="1031">Es sind keine Metadaten mit dem Tabellenschema für diese Tabelle vorhanden</Text>
+			<Text LcId="1033">There is no metadata including the tableschema for this table</Text>
 		</Text>
 		<Text TxtId="This command can only be executed by one axis at the same time."/>
 		<Text TxtId="This command cannot be executed simultaneously by two axes."/>
@@ -2868,9 +3032,11 @@
 		<Text TxtId="This parameter must be greater than 0"/>
 		<Text TxtId="Timeout error occurred on command execution">
 			<Text LcId="1031">Zeitüberschreitung bei Kommandoausführung</Text>
+			<Text LcId="1033">Timeout error occurred on command execution</Text>
 		</Text>
 		<Text TxtId="Timeout expired">
 			<Text LcId="1031">Timeout abgelaufen</Text>
+			<Text LcId="1033">Timeout expired</Text>
 		</Text>
 		<Text TxtId="Timeout has occurred – the remote terminal is not responding in the specified ADS timeout.">
 			<Text LcId="1031">Timeout ist aufgetreten – Die Gegenstelle antwortet nicht im vorgegebenen ADS Timeout.</Text>
@@ -2888,18 +3054,23 @@
 		<Text TxtId="Torque, force or current limitation during command function P-0-0160."/>
 		<Text TxtId="Trace file error">
 			<Text LcId="1031">Fehler in der Ablaufverfolgungsdatei</Text>
+			<Text LcId="1033">Trace file error</Text>
 		</Text>
 		<Text TxtId="Transaction is rolled back">
 			<Text LcId="1031">Transaktion wird ein Rollback ausgeführt.</Text>
+			<Text LcId="1033">Transaction is rolled back</Text>
 		</Text>
 		<Text TxtId="Transaction is still active">
 			<Text LcId="1031">Transaktion ist noch aktiv</Text>
+			<Text LcId="1033">Transaction is still active</Text>
 		</Text>
 		<Text TxtId="Transaction rollback">
 			<Text LcId="1031">Transaktions Rollback</Text>
+			<Text LcId="1033">Transaction rollback</Text>
 		</Text>
 		<Text TxtId="Transaction state">
 			<Text LcId="1031">Transaktionsstatus</Text>
+			<Text LcId="1033">Transaction state</Text>
 		</Text>
 		<Text TxtId="TwinCAT Router is not active.">
 			<Text LcId="1031">Der TwinCAT Router ist nicht aktiv.</Text>
@@ -2914,6 +3085,7 @@
 		<Text TxtId="Umains monitoring or Umains loss monitoring is disabled in P-0-0204."/>
 		<Text TxtId="Unable to load translation DLL">
 			<Text LcId="1031">Konvertierungs-DLL kann nicht geladen werden</Text>
+			<Text LcId="1033">Unable to load translation DLL</Text>
 		</Text>
 		<Text TxtId="Undervoltage DC-Link">
 			<Text LcId="1031">Unterspannung DC-Zwischenkreis</Text>
@@ -2922,6 +3094,7 @@
 		<Text TxtId="Unexpected groupindex in the Replacement values Cfg Data at offset 0x{0,x}"/>
 		<Text TxtId="Uniqueness option type out of range">
 			<Text LcId="1031">Der Eindeutigkeitsoptionstyp außerhalb des gültigen Bereichs</Text>
+			<Text LcId="1033">Uniqueness option type out of range</Text>
 		</Text>
 		<Text TxtId="Unknown AMS command.">
 			<Text LcId="1031">Unbekannter AMS-Befehl.</Text>
@@ -2934,11 +3107,13 @@
 		<Text TxtId="Unknown internal brake resistor."/>
 		<Text TxtId="Unknown internal Error">
 			<Text LcId="1031">Unbekannter interner Fehler</Text>
+			<Text LcId="1033">Unknown internal Error</Text>
 		</Text>
 		<Text TxtId="Unknown nominal device current."/>
 		<Text TxtId="Unknown para interface"/>
 		<Text TxtId="Unspecified Error">
 			<Text LcId="1031">Unspezifizierter Fehler</Text>
+			<Text LcId="1033">Unspecified Error</Text>
 		</Text>
 		<Text TxtId="Unsupported feedback system connected."/>
 		<Text TxtId="Update the AX5000 firmware to a version 2.06 or higher."/>
@@ -2986,6 +3161,7 @@
 		</Text>
 		<Text TxtId="WITH CHECK OPTION violation">
 			<Text LcId="1031">WITH CHECK OPTION-Verstoß</Text>
+			<Text LcId="1033">WITH CHECK OPTION violation</Text>
 		</Text>
 		<Text TxtId="With NC error handling activated (P-0-0350), the AX5000 was not stopped by the NC within the parametrized time period (P-0-0351)."/>
 		<Text TxtId="With some TTL feedback systems this problem occurs during the initialization phase."/>
@@ -3004,6 +3180,7 @@
 		</Text>
 		<Text TxtId="Wrong number of parameters">
 			<Text LcId="1031">Falsche Anzahl von Parametern</Text>
+			<Text LcId="1033">Wrong number of parameters</Text>
 		</Text>
 		<Text TxtId="Wrong selection of the brake resistor"/>
 		<Text TxtId="wrong subindex order when reading the input mapping cfg data, the expected subindex is {0}"/>
@@ -3119,7 +3296,7 @@
 		<Text TxtId="{0}{1,X}{2} Configured channel current is greater than the motor continuous stall current."/>
 		<Text TxtId="{0}{1,X}{2} Configured channel peak current is greater than the amplifier channel peak current."/>
 		<Text TxtId="{0}{1,X}{2} Configured channel peak current is greater than the motor peak current."/>
-		<Text TxtId="{0}{1,X}{2} Configured safety option don't match"/>
+		<Text TxtId="{0}{1,X}{2} Configured safety option doesn't match"/>
 		<Text TxtId="{0}{1,X}{2} Constraint check failed."/>
 		<Text TxtId="{0}{1,X}{2} Continuous power internal brake resistor too low."/>
 		<Text TxtId="{0}{1,X}{2} Control unit: End of stack reached"/>
@@ -3569,10 +3746,12 @@
 		<Text TxtId="{0}{1,X}{2} Negative limit switch error."/>
 		<Text TxtId="{0}{1,X}{2} Negative limit switch warning."/>
 		<Text TxtId="{0}{1,X}{2} No control loops allocated. Calibration mode active."/>
+		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: A special setting accepts the encoder boot mode."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Commutation offset file invalid."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Detailed error info"/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Electronic data sheet without implied commutation offset found."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Feedback not found."/>
+		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: File system error."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: File write failed."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: HF2DSL encoder error."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Initial encoder status error"/>
@@ -3590,6 +3769,7 @@
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Read cyclic data, Request error"/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Shutdown of the encoder failed"/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: The electronic data sheet is invalid."/>
+		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: The encoder boot mode seems to be active."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: Unknown state."/>
 		<Text TxtId="{0}{1,X}{2} OCT / HpfDSL: User data file invalid."/>
 		<Text TxtId="{0}{1,X}{2} One cable feedback: Encoder status signals an error"/>
@@ -23166,6 +23346,38 @@
 			</Detail>
 		</Event>
 		<Event>
+			<Id>63564</Id>
+			<Message>{0}{1,X}{2} OCT / HpfDSL: A special setting accepts the encoder boot mode.</Message>
+			<Detail>
+				<SourceId>DiagReset</SourceId>
+				<Id>2</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagReaction</SourceId>
+				<Id>3</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagType</SourceId>
+				<Id>0</Id>
+			</Detail>
+		</Event>
+		<Event>
+			<Id>63565</Id>
+			<Message>{0}{1,X}{2} OCT / HpfDSL: The encoder boot mode seems to be active.</Message>
+			<Detail>
+				<SourceId>DiagReset</SourceId>
+				<Id>2</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagReaction</SourceId>
+				<Id>3</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagType</SourceId>
+				<Id>0</Id>
+			</Detail>
+		</Event>
+		<Event>
 			<Id>63566</Id>
 			<Message>{0}{1,X}{2} OCT / HpfDSL: Position offset file found but the manufacturer position offset is active.</Message>
 			<Detail>
@@ -24295,6 +24507,22 @@
 			<Detail>
 				<SourceId>DiagReaction</SourceId>
 				<Id>4</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagType</SourceId>
+				<Id>0</Id>
+			</Detail>
+		</Event>
+		<Event>
+			<Id>63651</Id>
+			<Message>{0}{1,X}{2} OCT / HpfDSL: File system error.</Message>
+			<Detail>
+				<SourceId>DiagReset</SourceId>
+				<Id>2</Id>
+			</Detail>
+			<Detail>
+				<SourceId>DiagReaction</SourceId>
+				<Id>3</Id>
 			</Detail>
 			<Detail>
 				<SourceId>DiagType</SourceId>
@@ -29796,10 +30024,10 @@ multiturnlength = "signal periods per rotation" * "length per signal period" mus
 		</Event>
 		<Event>
 			<Id>64980</Id>
-			<Message><![CDATA[{0}{1,X}{2} Configured safety option don't match]]></Message>
+			<Message><![CDATA[{0}{1,X}{2} Configured safety option doesn't match]]></Message>
 			<Detail>
 				<Name>Description</Name>
-				<Text><![CDATA[Configured safety option don't match]]></Text>
+				<Text>The configuration in P-0-2000 does not match the installed safety option card.</Text>
 			</Detail>
 			<Detail>
 				<SourceId>DiagReset</SourceId>
@@ -29813,6 +30041,10 @@ multiturnlength = "signal periods per rotation" * "length per signal period" mus
 				<SourceId>DiagType</SourceId>
 				<Id>1</Id>
 			</Detail>
+			<CauseRemedy Idx="0">
+				<Cause>The configuration in P-0-2000 does not match the installed safety option card.</Cause>
+				<Remedy>Double check and adjust P-0-2000.</Remedy>
+			</CauseRemedy>
 		</Event>
 		<Event>
 			<Id>64981</Id>

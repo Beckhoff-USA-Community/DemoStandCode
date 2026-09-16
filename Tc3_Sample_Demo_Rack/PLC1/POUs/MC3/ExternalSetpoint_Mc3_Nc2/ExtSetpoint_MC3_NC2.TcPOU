@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="ExtSetpoint_MC3_NC2" Id="{5cbd344c-96e7-4568-8414-f03419c9b1aa}" SpecialFunc="None">
+    <Declaration><![CDATA[// External Setpoint Generation: MC3 slave following NC2 master
+// An MC3 slave axis follows an NC2 master axis via a custom external setpoint generator
+// (FB_ExtSg_FollowNcAxis) that reads the NC2 master setpoints each cycle.
+// The axes are powered and the generator is activated on program start.
+PROGRAM ExtSetpoint_MC3_NC2
+VAR
+		////NC Master
+	fbPowerMaster	   : TC2_MC2.MC_Power;
+
+
+	////MC3 Slave
+	Mc3SlaveAxis	   : TC3_Mc3Ptp.AXIS_REF;
+	fbPowerMC3Slave	   : Tc3_Mc3Ptp.MC_Power;
+	fbActivateMc3ExtSg : Tc3_Mc3Ptp.MC_ActivateExternalSetpointGeneration;
+	fbMc3FollowNc	   : FB_ExtSg_FollowNcAxis('ExtSg_FollowNcAxis');
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Master Axis
+fbPowerMaster(Axis			  := Nc2MasterAxis,
+			  Enable		  := TRUE,
+			  Enable_Positive := TRUE,
+			  Enable_Negative := TRUE);
+
+
+//MC3 Slave Axis
+fbPowerMC3Slave(Axis		   := Mc3SlaveAxis,
+				Enable		   := TRUE,
+				EnableNegative := TRUE,
+				EnablePositive := TRUE);
+
+fbActivateMc3ExtSg(Axis						 := Mc3SlaveAxis,
+				   ExternalSetpointGenerator := fbMc3FollowNc,
+				   AllowOtherContext		 := TRUE,
+				   EnableDynamicChecks		 := FALSE);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

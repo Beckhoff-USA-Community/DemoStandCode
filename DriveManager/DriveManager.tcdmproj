@@ -12,12 +12,15 @@
   <ItemGroup>
     <Content Include="Drive 29 (AX5203-0000-0215)_1.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 12 (EK1122)^Drive 29 (AX5203-0000-0215)_1</IoItemPathName>
     </Content>
     <Content Include="Term 20 %28EL7201-0010%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 12 (EK1122)^Term 13 (EK1100)^Term 20 (EL7201-0010)</IoItemPathName>
     </Content>
     <Content Include="Term 7 %28EL7037%29.tcdmdrv">
       <SubType>Content</SubType>
+      <IoItemPathName>TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EL7037)</IoItemPathName>
     </Content>
   </ItemGroup>
 </Project>
