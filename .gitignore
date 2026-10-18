@@ -335,3 +335,4 @@ paket-files/
 __pycache__/
 *.pyc
 *.bak
+/Tc3_Sample_Demo_Rack.~u
