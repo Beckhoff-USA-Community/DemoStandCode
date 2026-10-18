@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.26">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.27">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -3625,9 +3625,14 @@ External Setpoint Generation:
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{A1402D9D-2D9E-4257-B648-B4832C0532AB}" Namespace="MC" TcBaseType="true">EEncoderDataRange</Name>
+			<Name GUID="{B2513EAE-3E0F-5368-C759-C5943D1643BC}" Namespace="MC" TcBaseType="true">EEncoderDataRange</Name>
 			<BitSize>32</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Invalid encoder data range.]]></Comment>
+			</EnumInfo>
 			<EnumInfo>
 				<Text><![CDATA[FullRange]]></Text>
 				<Enum>1</Enum>
@@ -3650,6 +3655,7 @@ External Setpoint Generation:
 				</Property>
 			</Properties>
 			<Hides>
+				<Hide GUID="{A1402D9D-2D9E-4257-B648-B4832C0532AB}"/>
 				<Hide GUID="{60F978BC-F065-411F-B52F-A76ADA43E6A0}"/>
 				<Hide GUID="{6D5A48D7-73F8-49F3-B482-8E32EA9A8AF4}"/>
 			</Hides>
@@ -5075,6 +5081,7 @@ External Setpoint Generation:
 				<ImageData>424dd6020000000000003600000028000000100000000e00000001001800000000000000000000000000000000000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff858585858585858585858585858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3c5c3c3c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3c5c3c3c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ff131313ff00ffff00ffff00ffc5c3c3ff0000ff0000ff0000858585ff00ff4444443c3c3c3434342c2c2c2424241d1d1d1d1d1dff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ff4b4b4b8a8a8a8a8a8a8585858585857c7c7c1d1d1d0000ff0000ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ff4b4b4b4444444444443c3c3c3434342c2c2c242424ff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ffff00ffff00ffff00ff3c3c3cff00ffff00ff2c2c2cff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ff5d5c5c5454544b4b4b444444ff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3ff0000c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3c5c3c3c5c3c3858585ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc5c3c3c5c3c3c5c3c3c5c3c3858585ff00ff</ImageData>
 			</Info>
 			<Parameters>
+				<Group Collapsed="true"><![CDATA[Scaling]]></Group>
 				<Parameter Group="Scaling">
 					<Name>Encoder Mounting Offset</Name>
 					<Comment><![CDATA[Defines the permanent correction value for the physical encoder alignment. Set once during commissioning.]]></Comment>
@@ -6752,10 +6759,10 @@ External Setpoint Generation:
 						<MFunc>6500000000000000020000000000000064000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</MFunc>
 					</Interpreter>
 				</Channel>
-				<Instance Id="#x05000100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.12.0">
+				<Instance Id="#x05000100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.17.0">
 					<Name>Mc-Instance for NcPtp</Name>
 					<ImageId>4</ImageId>
-					<TmcDesc GUID="{6445FBA6-B920-4AD2-873B-8C61DD652099}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.12.0">
+					<TmcDesc GUID="{6445FBA6-B920-4AD2-873B-8C61DD652099}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.17.0">
 						<Name>MC Instance</Name>
 						<CLSID ClassFactory="Tc3_Mc3Base_Core">{05030084-0000-0000-F000-000000000064}</CLSID>
 						<InitSequence>PSO</InitSequence>
@@ -6839,9 +6846,9 @@ External Setpoint Generation:
 				<MET Priority="14" CycleTimeNS="2000000" OTCID="#x020100a0" Scheduling="1"/>
 				<MPT Priority="15" CycleTimeNS="10000000" OTCID="#x020100b0"/>
 				<MJT Priority="32" OTCID="#x02010090"/>
-				<Instance Id="#x05100010" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.12.0">
+				<Instance Id="#x05100010" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.17.0">
 					<Name>Context1</Name>
-					<TmcDesc GUID="{6445FBA6-B920-4AD2-873B-8C61DD652099}" TcSmClass="TComMcCtxObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.12.0">
+					<TmcDesc GUID="{6445FBA6-B920-4AD2-873B-8C61DD652099}" TcSmClass="TComMcCtxObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Base_Core|4.0.17.0">
 						<Name>MC Instance</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -6864,7 +6871,7 @@ External Setpoint Generation:
 								<CycleTime>10000000</CycleTime>
 							</Context>
 							<Context>
-								<Id>2</Id>
+								<Id>3</Id>
 								<Name>MJT</Name>
 								<ManualConfig>
 									<OTCID>#x02010090</OTCID>
@@ -6940,9 +6947,9 @@ External Setpoint Generation:
 						</ParameterValues>
 					</TmcDesc>
 				</Instance>
-				<Axis Id="#x05110010" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110010" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>Reversing (Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -6979,10 +6986,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010010" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010010" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -7009,9 +7016,9 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Axis>
-				<Axis Id="#x05110020" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110020" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>Nc2_Slave (Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -7048,10 +7055,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010030" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010030" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -7078,9 +7085,9 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Axis>
-				<Axis Id="#x05110030" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110030" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>Master (Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -7117,10 +7124,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010040" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010040" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -7147,9 +7154,9 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Axis>
-				<Axis Id="#x05110040" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110040" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>Slave (Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -7186,10 +7193,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010050" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010050" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -7216,9 +7223,9 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Axis>
-				<Axis Id="#x05110050" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110050" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>PressToTarget (FluidPower Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0" SharedTmc="{0C78E00B-4867-712D-97ED-FD166FB81254}">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0" SharedTmc="{0C78E00B-4867-712D-97ED-FD166FB81254}">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -7259,10 +7266,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010060" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010060" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -7288,10 +7295,10 @@ External Setpoint Generation:
 							<ParentOTCID>#x05110050</ParentOTCID>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Position Controller</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{D93C94E1-1D05-4A13-B003-1742DBF994D0}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{D93C94E1-1D05-4A13-B003-1742DBF994D0}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Position Controller</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D8-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -7320,7 +7327,7 @@ External Setpoint Generation:
 							</Contexts>
 							<Parameters>
 								<Group><![CDATA[General]]></Group>
-								<Group><![CDATA[Control Parameter]]></Group>
+								<Group Collapsed="true"><![CDATA[Control Parameter]]></Group>
 								<Group Collapsed="true"><![CDATA[Output Limitation]]></Group>
 								<Parameter Group="General">
 									<Name>Control Value Type</Name>
@@ -7589,10 +7596,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Load Controller</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{EF988A94-1E60-4553-BF5F-BD4AFB8B648F}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{EF988A94-1E60-4553-BF5F-BD4AFB8B648F}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Load Controller</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D9-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -7837,10 +7844,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Pressure Sensor A</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Load Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CE-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -8229,10 +8236,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x010100a0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x010100a0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Filter Pressure Sensor A</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Load Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300DA-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -8382,10 +8389,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Pressure Sensor B</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Load Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CE-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -8774,10 +8781,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x010100c0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x010100c0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Filter Pressure Sensor B</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Load Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300DA-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -8927,10 +8934,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x010100e0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+					<Module Id="#x010100e0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 						<Name>FluidPower Axis Parameters</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{6F4CF72D-CB0C-41A1-A3C6-1645342FE9B1}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+						<TmcDesc GUID="{6F4CF72D-CB0C-41A1-A3C6-1645342FE9B1}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 							<Name>FluidPower Axis Parameters</Name>
 							<CLSID ClassFactory="Tc3_Mc3FluidPower_Core">{050300B7-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -9025,10 +9032,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+					<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 						<Name>Valve Characteristic Curve</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{B2A1403F-2336-474E-927E-6EF13A51284D}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+						<TmcDesc GUID="{B2A1403F-2336-474E-927E-6EF13A51284D}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 							<Name>Valve Characteristic Curve</Name>
 							<CLSID ClassFactory="Tc3_Mc3FluidPower_Core">{050300BC-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -9142,10 +9149,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010101e0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x010101e0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Object9 (Analog Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{B721DB7B-1DD8-4D1A-9825-B3E0232C2736}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{B721DB7B-1DD8-4D1A-9825-B3E0232C2736}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Drive</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300BB-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -9525,10 +9532,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010100d0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x010100d0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Object9 (SSI Encoder)</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{FD007305-4FB1-4A0B-85DA-91D2CB24AED7}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{FD007305-4FB1-4A0B-85DA-91D2CB24AED7}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>SSI Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CC-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -9615,7 +9622,7 @@ External Setpoint Generation:
 									<Name>Position Data Range</Name>
 									<Comment><![CDATA[Range of position feedback counter value. FullRange refers to upper and lower bound of respective feedback type, e.g. 0 and 2^32 for UDINT.]]></Comment>
 									<BitSize>32</BitSize>
-									<BaseType GUID="{A1402D9D-2D9E-4257-B648-B4832C0532AB}" Namespace="MC">EEncoderDataRange</BaseType>
+									<BaseType GUID="{B2513EAE-3E0F-5368-C759-C5943D1643BC}" Namespace="MC">EEncoderDataRange</BaseType>
 									<Default>
 										<EnumText>FullRange</EnumText>
 									</Default>
@@ -10199,10 +10206,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010100" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x01010100" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Actual Position Filter</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{7C66DF84-604A-482D-B8AD-6FD6EE811FEA}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{7C66DF84-604A-482D-B8AD-6FD6EE811FEA}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Position Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D6-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -10352,9 +10359,9 @@ External Setpoint Generation:
 						</Module>
 					</Module>
 				</Axis>
-				<Axis Id="#x05110060" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+				<Axis Id="#x05110060" ShareTmcDesc="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 					<Name>LoadControl (FluidPower Axis)</Name>
-					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0" SharedTmc="{0C78E00B-4867-712D-97ED-FD166FB81254}">
+					<TmcDesc GUID="{1437754E-F772-4FD4-AD2D-3E16CDF29D72}" TcSmClass="TComMcAxisObj" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0" SharedTmc="{0C78E00B-4867-712D-97ED-FD166FB81254}">
 						<Name>Axis</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -10395,10 +10402,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010120" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010120" ShareTmcDesc="true" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>SimEncoderDrive (Simulation Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{48F33D24-2A1B-4C09-8503-9500E9D277B5}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Simulation Drive</Name>
 							<InitSequence>PSO</InitSequence>
 							<Contexts>
@@ -10424,10 +10431,10 @@ External Setpoint Generation:
 							<ParentOTCID>#x05110060</ParentOTCID>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Position Controller</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{D93C94E1-1D05-4A13-B003-1742DBF994D0}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{D93C94E1-1D05-4A13-B003-1742DBF994D0}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Position Controller</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D8-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -10725,10 +10732,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Load Controller</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{EF988A94-1E60-4553-BF5F-BD4AFB8B648F}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{EF988A94-1E60-4553-BF5F-BD4AFB8B648F}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Load Controller</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D9-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -10973,10 +10980,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010150" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010150" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Pressure Sensor A</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Load Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CE-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -11365,10 +11372,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010160" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x01010160" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Filter Pressure Sensor A</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Load Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300DA-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -11518,10 +11525,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x01010170" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010170" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Pressure Sensor B</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{0FE34462-CF28-490A-90CF-49DBD9C10872}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Load Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CE-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -11910,10 +11917,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010180" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x01010180" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Filter Pressure Sensor B</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{EA1EC4AE-7852-4884-95D8-3E74F49F594E}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Load Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300DA-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -12063,10 +12070,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x010101a0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+					<Module Id="#x010101a0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 						<Name>FluidPower Axis Parameters</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{6F4CF72D-CB0C-41A1-A3C6-1645342FE9B1}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+						<TmcDesc GUID="{6F4CF72D-CB0C-41A1-A3C6-1645342FE9B1}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 							<Name>FluidPower Axis Parameters</Name>
 							<CLSID ClassFactory="Tc3_Mc3FluidPower_Core">{050300B7-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -12161,10 +12168,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010101b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+					<Module Id="#x010101b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 						<Name>Valve Characteristic Curve</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{B2A1403F-2336-474E-927E-6EF13A51284D}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.12.0">
+						<TmcDesc GUID="{B2A1403F-2336-474E-927E-6EF13A51284D}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3FluidPower_Core|4.0.17.0">
 							<Name>Valve Characteristic Curve</Name>
 							<CLSID ClassFactory="Tc3_Mc3FluidPower_Core">{050300BC-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -12278,10 +12285,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010110" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010110" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Object8 (Analog Drive)</Name>
 						<ImageId>1000</ImageId>
-						<TmcDesc GUID="{B721DB7B-1DD8-4D1A-9825-B3E0232C2736}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{B721DB7B-1DD8-4D1A-9825-B3E0232C2736}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Analog Drive</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300BB-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -12661,10 +12668,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010190" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+					<Module Id="#x01010190" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 						<Name>Object9 (SSI Encoder)</Name>
 						<ImageId>1002</ImageId>
-						<TmcDesc GUID="{FD007305-4FB1-4A0B-85DA-91D2CB24AED7}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<TmcDesc GUID="{FD007305-4FB1-4A0B-85DA-91D2CB24AED7}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>SSI Encoder</Name>
 							<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300CC-0000-0000-F000-000000000064}</CLSID>
 							<Info>
@@ -12751,7 +12758,7 @@ External Setpoint Generation:
 									<Name>Position Data Range</Name>
 									<Comment><![CDATA[Range of position feedback counter value. FullRange refers to upper and lower bound of respective feedback type, e.g. 0 and 2^32 for UDINT.]]></Comment>
 									<BitSize>32</BitSize>
-									<BaseType GUID="{A1402D9D-2D9E-4257-B648-B4832C0532AB}" Namespace="MC">EEncoderDataRange</BaseType>
+									<BaseType GUID="{B2513EAE-3E0F-5368-C759-C5943D1643BC}" Namespace="MC">EEncoderDataRange</BaseType>
 									<Default>
 										<EnumText>FullRange</EnumText>
 									</Default>
@@ -13335,10 +13342,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x010101c0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+						<Module Id="#x010101c0" KeepUnrestoredLinks="2" HideInstance="true" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 							<Name>Actual Position Filter</Name>
 							<ImageId>1003</ImageId>
-							<TmcDesc GUID="{7C66DF84-604A-482D-B8AD-6FD6EE811FEA}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.12.0">
+							<TmcDesc GUID="{7C66DF84-604A-482D-B8AD-6FD6EE811FEA}" ClassFactoryId="Beckhoff Automation GmbH|Tc3_Mc3Ptp_Core|4.0.17.0">
 								<Name>Actual Position Filter</Name>
 								<CLSID ClassFactory="Tc3_Mc3Ptp_Core">{050300D6-0000-0000-F000-000000000064}</CLSID>
 								<Info>
@@ -13492,7 +13499,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{07E483BF-EC1E-4857-8E62-21F297DE72B1}" Name="PLC1" PrjFilePath="PLC1\PLC1.plcproj" TmcFilePath="PLC1\PLC1.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F283C44B-2B03-15CD-CE5A-94A87189ED48}" TmcPath="PLC1\PLC1.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{DBA54661-1EB2-5181-B712-6A62FF99A5F7}" TmcPath="PLC1\PLC1.tmc">
 					<Name>PLC1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" ContextId="3" AreaNo="49">
@@ -13813,6 +13820,11 @@ Version / Date / Description:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>MAIN.wFrmXWcState_MAIN</Name>
+							<Comment><![CDATA[ link to NC-task related ethercat frame state (Frm0WcState)]]></Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
 							<Name>MAIN.AxisRef[1].NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
@@ -13831,11 +13843,6 @@ Version / Date / Description:
 						<Var>
 							<Name>MAIN.AxisRef[5].NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.wFrmXWcState_MAIN</Name>
-							<Comment><![CDATA[ link to NC-task related ethercat frame state (Frm0WcState)]]></Comment>
-							<Type>WORD</Type>
 						</Var>
 						<Var>
 							<Name>TwinSAFE.fbSafeGroup1.stInfoData</Name>
@@ -13968,17 +13975,17 @@ Version / Date / Description:
 							<Type GUID="{AAA38655-213C-B09F-95B3-3722C5564B5A}" Namespace="Tc3_Mc3Ptp">AXIS_REF_TOPLC</Type>
 						</Var>
 						<Var>
-							<Name>GVL20_Axis.nAxis3TorqueFeedback</Name>
-							<Comment><![CDATA[ Axis 3 current +/- 1000 ]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>GVL20_Axis.stAxis1.NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 						<Var>
 							<Name>GVL20_Axis.stAxis2.NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL20_Axis.nAxis3TorqueFeedback</Name>
+							<Comment><![CDATA[ Axis 3 current +/- 1000 ]]></Comment>
+							<Type>INT</Type>
 						</Var>
 						<Var>
 							<Name>GVL20_Axis.nAxis4TorqueFeedback</Name>
@@ -13995,16 +14002,6 @@ Version / Date / Description:
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL00_IO_CX.bSwitchS10</Name>
-							<Comment><![CDATA[ blinker 1 on/off ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL00_IO_CX.bSwitchS11</Name>
-							<Comment><![CDATA[ blinker 2 on/off ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL20_Axis.stAxis3.NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
@@ -14015,6 +14012,16 @@ Version / Date / Description:
 						<Var>
 							<Name>GVL20_Axis.stAxis5.NcToPlc</Name>
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL00_IO_CX.bSwitchS10</Name>
+							<Comment><![CDATA[ blinker 1 on/off ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL00_IO_CX.bSwitchS11</Name>
+							<Comment><![CDATA[ blinker 2 on/off ]]></Comment>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL00_IO_CX.bSwitchS12</Name>
@@ -14147,11 +14154,6 @@ Version / Date / Description:
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL02_IO_EK1101.nEL1262Ch1CycleCount</Name>
-							<Comment><![CDATA[ EtherCAT cycle count, increments each EtherCAT cycle ]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
 							<Name>GVL02_IO_EK1101.stEL1252Ch1.Input</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -14208,6 +14210,11 @@ Version / Date / Description:
 							<Type>UINT</Type>
 						</Var>
 						<Var>
+							<Name>GVL02_IO_EK1101.nEL1262Ch1CycleCount</Name>
+							<Comment><![CDATA[ EtherCAT cycle count, increments each EtherCAT cycle ]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
 							<Name>GVL02_IO_EK1101.aAxis2RefCamOs</Name>
 							<Comment><![CDATA[ servo reference cam on a oversampling input (Axis 2 Servo EL) - Oversampling of 10 samples per EtherCAT cylce (based on task cylce time) ]]></Comment>
 							<Type GUID="{8993EA93-CD58-786C-177B-BF571BCDFBE6}">ARRAY [0..9] OF BOOL</Type>
@@ -14221,11 +14228,6 @@ Version / Date / Description:
 							<Name>GVL02_IO_EK1101.aOsInputFromEL2252Out2</Name>
 							<Comment><![CDATA[ Signal form EL2252 output 2 - Oversampling of 10 samples per EtherCAT cylce (based on task cylce time) ]]></Comment>
 							<Type GUID="{8993EA93-CD58-786C-177B-BF571BCDFBE6}">ARRAY [0..9] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL02_IO_EK1101.nEL3702Ch1CycleCount</Name>
-							<Comment><![CDATA[ EtherCAT cycle count, increments each EtherCAT cycle ]]></Comment>
-							<Type>UINT</Type>
 						</Var>
 						<Var>
 							<Name>GVL02_IO_EK1101.stEL2252.SysTime</Name>
@@ -14250,6 +14252,11 @@ Version / Date / Description:
 						<Var>
 							<Name>GVL02_IO_EK1101.stEL2252.State</Name>
 							<Comment><![CDATA[ not used ]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL02_IO_EK1101.nEL3702Ch1CycleCount</Name>
+							<Comment><![CDATA[ EtherCAT cycle count, increments each EtherCAT cycle ]]></Comment>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
@@ -14467,7 +14474,6 @@ Version / Date / Description:
 							<CycleTime>1000000</CycleTime>
 						</Context>
 					</Contexts>
-					<JsonDynPous><![CDATA[null]]></JsonDynPous>
 					<TaskPouOids>
 						<TaskPouOid Prio="4" OTCID="#x08502001"/>
 						<TaskPouOid Prio="6" OTCID="#x08502002"/>

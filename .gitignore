@@ -337,3 +337,10 @@ __pycache__/
 *.pyc
 *.bak
 /Tc3_Sample_Demo_Rack.~u
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/Plc/Port_851.app
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/Plc/Port_851.cid
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/Plc/Port_851.crc
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/Plc/Port_851_boot.tizip
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/CurrentConfig/PLC1.tpzip
+/Tc3_Sample_Demo_Rack/_Boot/TwinCAT RT (x64)/CurrentConfig/TsPrg1.tfzip
+/Tc3_Sample_Demo_Rack/PLC1/PLC1.tmc
